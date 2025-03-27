@@ -48,10 +48,10 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Papers
-    url:               /papers/
   - title:             Projects
     url:               /projects/
+  - title:             Papers
+    url:               /papers/ 
   - title:             About
     url:               /about/
 
