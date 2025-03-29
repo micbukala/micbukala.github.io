@@ -52,8 +52,8 @@ menu:
     url:               /projects/
   - title:             Papers
     url:               /papers/ 
-  - title:             Collaboration
-    url:               /collaboration/
+  - title:             Collab
+    url:               /collab/
   - title:             About
     url:               /about/
 
