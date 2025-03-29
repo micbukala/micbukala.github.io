@@ -14,7 +14,10 @@ redirect_from:
     • Citations: 228 [Gooogle Scholar](https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao) 
                / 179 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57189596785) <br>
     • h-index: 8 [Google Scholar](https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao) 
-            / 7 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57189596785) <br>
+            / 7 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57189596785) <br><br>
+
+<b>Reviewer:</b><br>
+    Nature Communications Chemistry, Journal of Petrology, G3 (Geochemistry, Geophysics, Geosystems), Lithos, Journal of the Geological Society   <br><br>
 
 <b>Peer-review papers:</b><br>
 ---------  2024  ---------<br>

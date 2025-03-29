@@ -52,6 +52,8 @@ menu:
     url:               /projects/
   - title:             Papers
     url:               /papers/ 
+  - title:             Collaboration
+    url:               /collaboration/
   - title:             About
     url:               /about/
 
@@ -171,7 +173,7 @@ defaults:
         type:          WebPage
 
 kramdown:
-  math_engine:         katex
+  math_engine:         mathjax
   math_engine_opts:    {}
   footnote_backlink:   '&#x21a9;&#xfe0e;'
 
@@ -269,7 +271,7 @@ hydejack:
     dynamic:           false
 
     # Set to `true` to allow visitors to switch between light and dark mode.
-    icon:              true
+    icon:              false
 
   # ⚡️ DANGER ZONE ⚡️
   # ----------------
