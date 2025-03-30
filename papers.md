@@ -11,8 +11,8 @@ redirect_from:
 # Papers
 <b>Publication record:</b><br>
     • 19 peer-review papers / 1 paper in review <br>
-    • Citations: 228 [Gooogle Scholar](https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao) 
-               / 179 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57189596785) <br>
+    • Citations: 232 [Gooogle Scholar](https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao) 
+               / 182 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57189596785) <br>
     • h-index: 8 [Google Scholar](https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao) 
             / 7 [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57189596785) <br><br>
 
