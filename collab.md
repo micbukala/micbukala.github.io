@@ -22,8 +22,8 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     }
 
     body {
-      background-color: #1e1e1e;
-      color: white;
+      background-color: #2a2d2f;
+      color: #cccccc;
       font-family: Arial, sans-serif;
       font-size: 1rem;
       line-height: 1.75;
@@ -36,7 +36,7 @@ Ongoing research projects in which I am actively collaborating with others:<br>
 
     .project-title {
       cursor: pointer;
-      color: white;
+      color: #cccccc;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -67,13 +67,17 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     }
 
     .toggle-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      margin-left: 26px;
-      font-weight: 400;
-      font-size: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-left: 26px;
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: #393d40; 
+    padding: 2px;
+    border-radius: 2px;
     }
+
 
     .toggle-content.show {
       max-height: 300px;
@@ -104,8 +108,11 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     </div>
     <div id="details-p1" class="toggle-content">
       <div>
-        Project nr: PID2022-136471N-B-C21 & C22<br>
-        Funded by: MICIN/ AEI/10.13039/501100011033 and FEDER program; Spain
+        The RUSTED project aims to enhance our understanding of the role of ultramafic rocks in the deep cycling of two key volatile elements: sulfur and carbon. My work focuses on studying the intrinsic redox conditions and sulfur mobility during high-pressure serpentinite devolatilization. In particular, I integrate electron backscatter diffraction (EBSD) with advanced thermodynamic modeling to investigate a novel mechanism of carbon retention during high-pressure deserpentinization and the interaction of serpentinites with reduced COHS fluids.<br><br>
+
+        I presented these results during an invited talk at EGU 2024 (abstract).<br><br>
+        
+        Project nr: PID2022-136471N-B-C21 & C22 Funded by: MICIN/ AEI/10.13039/501100011033 and FEDER program; Spain
       </div>
     </div>
   </div>
