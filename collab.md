@@ -9,7 +9,7 @@ redirect_from:
 ---
 # Collaboration        
 <b> Collaborative projects: </b><br>
-Ongoing research projects in which I am actively collaborating with others:<br>
+Ongoing research in which I am currently involved in:<br>
 
 
 <html lang="pl">
@@ -80,7 +80,7 @@ Ongoing research projects in which I am actively collaborating with others:<br>
 
 
     .toggle-content.show {
-      max-height: 300px;
+      max-height: 350px;
     }
 
     a {
@@ -108,7 +108,7 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     </div>
     <div id="details-p1" class="toggle-content">
       <div>
-        The RUSTED project aims to enhance our understanding of the role of ultramafic rocks in the deep cycling of two key volatile elements: sulfur and carbon. My work focuses on studying the intrinsic redox conditions and sulfur mobility during high-pressure serpentinite devolatilization. In particular, I integrate electron backscatter diffraction (EBSD) with advanced thermodynamic modeling to investigate a novel mechanism of carbon retention during high-pressure deserpentinization and the interaction of serpentinites with reduced COHS fluids.<br><br>
+        The RUSTED project aims to enhance our understanding of the role of ultramafic rocks in the deep cycling of two key volatile elements: sulfur and carbon. <b><i>My work focuses on studying the intrinsic redox conditions and sulfur mobility during high-pressure serpentinite devolatilization</i></b>. In particular, I integrate electron backscatter diffraction (EBSD) with advanced thermodynamic modeling to investigate a novel mechanism of carbon retention during high-pressure deserpentinization and the interaction of serpentinites with reduced COHS fluids.<br><br>
 
         I presented these results during an invited talk at EGU 2024 (abstract).<br><br>
         
@@ -130,6 +130,10 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     </div>
     <div id="details-p4" class="toggle-content">
       <div>
+      The GarNeat project aim to characterize features observed in naturally and experimentally shocked (subjected to meteoritic impact events) garnets by integrating electron backscatter diffraction (EBSD) data with computational analyses of fracture networks that will allow to re-evaluate shock-induced fracturing that has already been shown in few previous studies.
+      <b><i>My work here focuses on developing a python-based tool for qualitative analyses of fracture networks.</i></b><br><br>
+
+      Project motto:<br>
         PL: "Anektuję tego pieruna" <br>
         ENG: "I hereby claim this bolt of fury"
       </div>
@@ -149,8 +153,7 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     </div>
     <div id="details-p2" class="toggle-content">
       <div>
-        Project nr: <a href="https://projekty.ncn.gov.pl/en/index.php?projekt_id=511414">2021/40/C/ST10/00264</a><br>
-        Funded by: NCN - National Science Centre Poland
+        Project nr: <a href="https://projekty.ncn.gov.pl/en/index.php?projekt_id=511414">2021/40/C/ST10/00264</a> Funded by: NCN - National Science Centre Poland
       </div>
     </div>
   </div>
@@ -168,8 +171,11 @@ Ongoing research projects in which I am actively collaborating with others:<br>
     </div>
     <div id="details-p3" class="toggle-content">
       <div>
-        Project nr: <a href="https://projekty.ncn.gov.pl/en/index.php?projekt_id=540940">2021/43/B/ST10/02312</a><br>
-        Funded by: NCN - National Science Centre Poland
+        The main themes of the research project includes (1) geophysical imaging of the deep crust and shallow mantle within and across the Western Carpathians; (2) documenting remnants of the Alpine Tethys and establishing time constraints for the formation of the suture zone; and (3) formulation of a new evolutionary model of Variscan crystalline basement, disappearance of the Alpine Tethys Ocean and build-up of the Western Carpathians.<br><br>
+
+        <b><i>My work here focuses on understanding the juxtapisition of Variscan crystalline basement and its Alpine reactivation using the integrating electron backscatter diffraction (EBSD), thermodynamic modelling and <sup>40</sup>Ar/<sup>39</sup>Ar and Rb-Sr geochronology.</i></b><br><br>
+
+        Project nr: <a href="https://projekty.ncn.gov.pl/en/index.php?projekt_id=540940">2021/43/B/ST10/02312</a> Funded by: NCN - National Science Centre Poland
       </div>
     </div>
   </div>

@@ -21,7 +21,6 @@ Read more about my curent project:
 Project Number: MMT24-IACT-01; CSIC-MOMENTUM SCHOLARSHIP funded EU’s Recovery and Resilience Mechanism – Next Generation, as part of the talent attraction and retention programs of Red.es, corresponding to Investment 4 of Component 19 of the Recovery, Transformation, and Resilience Plan (PRTR).
 
 <img src="/assets/img/blog/momentum.png" alt="Momentum" style="width: 700px; float: center; margin-right: 45px;"> 
-<br><br><br><br><br><br><br>
-
+<br><br>
 
 
