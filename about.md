@@ -113,11 +113,14 @@ Also, I am a geologist specializing in fluid-rock interactions and the deformati
     a:hover {
       text-decoration: underline;
     }
+
+    .indent {
+    margin-left: 50px; 
+    }
   </style>
 </head>
 <body>
 
-  <!-- Projekt 1 -->
   <div class="project">
     <div class="project-title" onclick="toggleDetails('p1')">
       <span id="icon-p1" class="icon">+</span>
@@ -127,20 +130,25 @@ Also, I am a geologist specializing in fluid-rock interactions and the deformati
     </div>
     <div id="details-p1" class="toggle-content">
       <div>
-        <i>2016 – 2021</i><br> 
-        <b>PhD studies – Natural Sciences: Earth Sciences</b><br>
-        AGH University of Science and Technology, Kraków (Poland)<br>
-        Doctoral thesis: <i>“Subduction processes recorded by the Baltica outer margin in the Scandinavian Caledonides”</i><br>
-        <a href="https://www.elementsmagazine.org/wp-content/uploads/archives/e18_3/e18_3_soc_PTMIN.pdf">🏅 Award for the best PhD thesis given by the Polish Mineralogical Society</a><br><br>
+        <b>2021 - PhD</b> <i>in Earth Sciences - Geology</i><br> 
+        <div class="indent">
+          AGH University of Science and Technology, Kraków (Poland)<br>
+          Doctoral thesis: <i>“Subduction processes recorded by the Baltica outer margin in the Scandinavian Caledonides”</i><br>
+          <a href="https://www.elementsmagazine.org/wp-content/uploads/archives/e18_3/e18_3_soc_PTMIN.pdf">🏅 Award for the best PhD thesis given by the Polish Mineralogical Society</a>
+        </div> 
+        <br>
 
-        <i>2014 – 2016</i><br>
-        <b>MSc studies – Geology: Applied Mineralogy and Petrology </b><br>
-        University of Wrocław, Wrocław (Poland)<br>
-        Master thesis: <i>“Sulfides from mantle xenoliths hosted in basalts of the Lower Silesia, Poland”</i><br><br>
+        <b>2016 - MSc</b> <i>in Geology: Applied Mineralogy and Petrology</i><br>
+        <div class="indent">
+          University of Wrocław, Wrocław (Poland)<br>
+          Master thesis: <i>“Sulfides from mantle xenoliths hosted in basalts of the Lower Silesia, Poland”</i>
+        </div>
+        <br>
 
-        <i>2011 – 2014</i><br>
-        <b>BSc studies – Geology</b><br>  
-        University of Wrocław, Wrocław (Poland)<br>
+        <b>2014 - BSc</b> <i>in Geology</i><br>
+        <div class="indent">
+          University of Wrocław, Wrocław (Poland)<br>
+        </div>
       </div>
     </div>
   </div>
