@@ -20,17 +20,46 @@ I really like mountains—they're big and rocky.<br><br>
 Also, I am a geologist specializing in fluid-rock interactions and the deformation processes occurring in environments ranging from the deep Earth to the near surface. My approach integrates hands-on fieldwork, laboratory studies, and advanced numerical/thermodynamic modeling to uncover the intricate dynamics of our planet.
 <br>
 
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Projekty Naukowe</title>
+  <style>
+    :root {
+      --accent-color: rgb(79,177,186);
+    }
 
-**Fieldwork Experience:** <br>
-• 9+ years of experience across diverse terrains of Norway, Sweden, Svalbard, Greenland, Slovakia, Greece, and Spain.
+    .indent1 {
+      margin-left: 25px; 
+    }
 
-**Research Contributions:** <br>
-• Co-applicant and researcher in projects exceeding €2 million in funding.<br>
-• Extensive experience as an editor, author, and peer reviewer for academic research papers.
+    .list-item {
+      text-indent: -1em;     /* Pull bullet out */
+      padding-left: 1em;     /* Push rest of text back */
+      margin-bottom: 0.5em;  /* Optional spacing between items */
+    }
+  </style>
+</head>
+<body>
 
-**Technical Proficiency:** <br>
-• Python and Matlab for scientific computing and data analysis.
+<b>Fieldwork Experience: </b><br>
+<div class="indent1">
+  <div class="list-item">• 9+ years of experience across diverse terrains of Norway, Sweden, Svalbard, Greenland, Slovakia, Greece, and Spain.</div>
+</div>
+
+<b>Research Contributions:</b> <br>
+<div class="indent1">
+  <div class="list-item">• Co-applicant and researcher in projects exceeding €2 million in funding.</div>
+  <div class="list-item">• Extensive experience as an editor, author, and peer reviewer for academic research papers.</div>
+</div>
+
+<b>Technical Proficiency:</b><br>
+<div class="indent1">
+  <div class="list-item">• Python and Matlab for scientific computing and data analysis.</div>
+</div>
 <br><br>
+</body>
+</html>
 
 ---
 

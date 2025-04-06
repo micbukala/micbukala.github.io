@@ -17,7 +17,7 @@ Read more about my curent project:
   <img src="/assets/img/blog/project_logo_dark.png" alt="Geodynamic Integration of Volatiles and Redox Exchanges" style="width: 500px; float: right; margin-right: 45px;">
 </a>
 
-<br><br><br>
+<br><br><br><br>
 Project Number: MMT24-IACT-01; CSIC-MOMENTUM SCHOLARSHIP funded EU’s Recovery and Resilience Mechanism – Next Generation, as part of the talent attraction and retention programs of Red.es, corresponding to Investment 4 of Component 19 of the Recovery, Transformation, and Resilience Plan (PRTR).
 
 <img src="/assets/img/blog/momentum.png" alt="Momentum" style="width: 700px; float: center; margin-right: 45px;"> 

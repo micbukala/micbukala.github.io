@@ -80,7 +80,7 @@ Ongoing research in which I am currently involved in:<br>
 
 
     .toggle-content.show {
-      max-height: 350px;
+      max-height: 600px;
     }
 
     a {
@@ -110,7 +110,10 @@ Ongoing research in which I am currently involved in:<br>
       <div>
         The RUSTED project aims to enhance our understanding of the role of ultramafic rocks in the deep cycling of two key volatile elements: sulfur and carbon. <b><i>My work focuses on studying the intrinsic redox conditions and sulfur mobility during high-pressure serpentinite devolatilization</i></b>. In particular, I integrate electron backscatter diffraction (EBSD) with advanced thermodynamic modeling to investigate a novel mechanism of carbon retention during high-pressure deserpentinization and the interaction of serpentinites with reduced COHS fluids.<br><br>
 
-        I presented these results during an invited talk at EGU 2024 (abstract).<br><br>
+        I presented these results during an invited talk at 
+        <a href="https://meetingorganizer.copernicus.org/EGU24/EGU24-12237.html" style="color: rgb(38,139,210); text-decoration: none;"> <b> EGU 2024 </b></a>
+
+        <br><br>
         
         Project nr: PID2022-136471N-B-C21 & C22 Funded by: MICIN/ AEI/10.13039/501100011033 and FEDER program; Spain
       </div>
