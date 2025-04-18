@@ -8,7 +8,7 @@ redirect_from:
   - /download/
 ---
 # Projects
-<b> Currently, I am a postdoctoral fellow in the [Momentum Programme](https://momentum.csic.es/en/momentum-program/) (CSIC, Spain) </b><br>
+<b> Currently, I am a postdoctoral researcher in the [Momentum Programme](https://momentum.csic.es/en/momentum-program/) (CSIC, Spain) </b><br>
 I am developing numerical modeling tools to improve our understanding of volatile exchanges and redox reactions in the Earth’s deep interior under high-pressure and low-to-high-temperature conditions. 
 This project focuses on integrating Gibbs free energy minimization (GFEM) with reactive transport models, leveraging AI techniques.<br><br>
 
@@ -21,6 +21,46 @@ Read more about my curent project:
 Project Number: MMT24-IACT-01; CSIC-MOMENTUM SCHOLARSHIP funded EU’s Recovery and Resilience Mechanism – Next Generation, as part of the talent attraction and retention programs of Red.es, corresponding to Investment 4 of Component 19 of the Recovery, Transformation, and Resilience Plan (PRTR).
 
 <img src="/assets/img/blog/momentum.png" alt="Momentum" style="width: 700px; float: center; margin-right: 45px;"> 
-<br><br>
+<br><br><br><br>
 
+---
 
+<b>Previously, I was the Principal Investigator (PI) of a research project within the Preludium Programme,</b> funded by the National Science Centre, Poland<br><br>
+The project, [High-pressure brittle failure of Tsäkkok eclogites (Scandinavian Caledonides): Interplay between dehydration and subduction zone seismicity](https://projekty.ncn.gov.pl/en/index.php?projekt_id=443889), focused on the Tsäkkok Tectonic Lens (TTL), located above the Arctic Circle in Norrbotten, Sweden. The TTL is part of the Scandinavian Caledonides, a ~1000 km long Himalayan-type orogen.<br><br>
+
+In this study, we applied an interdisciplinary analytical approach to constrain the pressure-temperature conditions of deformation and to confirm tectonic burial to depths exceeding 60 km within a relatively cold subduction zone. Our methods estimated that the studied rocks released approximately 4–5 wt.% of water, which played a key role in facilitating deformation. We documented a new set of structures formed by extensive fluid release and characterized the chemical composition of the released fluids and their effects on surrounding mineral grains.<br><br>
+
+A multi-method approach was employed to trace subtle, often overprinted evidence of fluid-rock interaction. In addition, micro-computed tomography (µCT) was used to construct 3D models of the studied microstructures.<br><br>
+
+The results of this project were published in two peer-reviewed papers:
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Projekty Naukowe</title>
+  <style>
+    :root {
+      --accent-color: rgb(79,177,186);
+    }
+        .indent {
+    margin-left: 37px; 
+    }
+  </style>
+</head>
+
+<body>
+<b><b>Bukała M,</b></b> Hidas K, Klonowska I, Barnes CJ, Fassmer K, Majka J. (2024) <br>
+<div class="indent">
+  Dehydration-driven deformation of eclogite: interplay between fluid discharge and rheology.
+  J. Metamorph. Geol.; 1-24.
+  doi: <a href="https://doi.org/10.1111/jmg.12765" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/jmg.12765 </a> 
+</div>   
+<br>
+
+<b>Bukała M,</b> Barnes CJ, Jeanneret P, Hidas K, Mazur S, Almqvist BS, et al. (2020) <br>
+<div class="indent">
+  Brittle deformation during eclogitization of early Paleozoic blueschist. <br>
+  Front. Earth Sci.; 8:594452. 
+  doi: <a href="https://doi.org/10.3389/feart.2020.594453" style="color: rgb(38,139,210); text-decoration: none;"> 10.3389/feart.2020.594453 </a>  
+</div> 
+<br>
+</body>

@@ -156,6 +156,10 @@ Ongoing research in which I am currently involved in:<br>
     </div>
     <div id="details-p2" class="toggle-content">
       <div>
+        The project aims to advance white mica geochronology by leveraging recent analytical developments that enable high-spatial resolution dating of individual grains preserved in their structural context. Despite these advancements, white mica has not yet been fully developed as a reliable geochronometer. This research is designed to explore and harness its potential through state-of-the-art in-situ <sup>40</sup>Ar/<sup>39</sup>Ar and Rb-Sr geochronological techniques.<br><br>
+
+        <b><i>My work here focuses on investigating white mica microstructures using electron backscatter diffraction (EBSD) to provide insights into lattice deformation and its potential implications for geochronology.</i></b><br><br>
+
         Project nr: <a href="https://projekty.ncn.gov.pl/en/index.php?projekt_id=511414">2021/40/C/ST10/00264</a> Funded by: NCN - National Science Centre Poland
       </div>
     </div>
