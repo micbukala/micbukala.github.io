@@ -42,6 +42,7 @@ Also, I am a geologist specializing in fluid-rock interactions and the deformati
 </head>
 <body>
 
+<br>
 <b>Fieldwork Experience: </b><br>
 <div class="indent1">
   <div class="list-item">• 9+ years of experience across diverse terrains of Norway, Sweden, Svalbard, Greenland, Slovakia, Greece, and Spain.</div>

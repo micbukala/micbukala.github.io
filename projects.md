@@ -26,13 +26,13 @@ Project Number: MMT24-IACT-01; CSIC-MOMENTUM SCHOLARSHIP funded EU’s Recovery 
 ---
 
 <b>Previously, I was the Principal Investigator (PI) of a research project within the Preludium Programme,</b> funded by the National Science Centre, Poland<br><br>
-The project, [High-pressure brittle failure of Tsäkkok eclogites (Scandinavian Caledonides): Interplay between dehydration and subduction zone seismicity](https://projekty.ncn.gov.pl/en/index.php?projekt_id=443889), focused on the Tsäkkok Tectonic Lens (TTL), located above the Arctic Circle in Norrbotten, Sweden. The TTL is part of the Scandinavian Caledonides, a ~1000 km long Himalayan-type orogen.<br><br>
+The project, <i>[High-pressure brittle failure of Tsäkkok eclogites (Scandinavian Caledonides): Interplay between dehydration and subduction zone seismicity](https://projekty.ncn.gov.pl/en/index.php?projekt_id=443889),</i> focused on the Tsäkkok Tectonic Lens (TTL), located above the Arctic Circle in Norrbotten, Sweden. The TTL is part of the Scandinavian Caledonides, a ~1000 km long Himalayan-type orogen.<br><br>
 
 In this study, we applied an interdisciplinary analytical approach to constrain the pressure-temperature conditions of deformation and to confirm tectonic burial to depths exceeding 60 km within a relatively cold subduction zone. Our methods estimated that the studied rocks released approximately 4–5 wt.% of water, which played a key role in facilitating deformation. We documented a new set of structures formed by extensive fluid release and characterized the chemical composition of the released fluids and their effects on surrounding mineral grains.<br><br>
 
 A multi-method approach was employed to trace subtle, often overprinted evidence of fluid-rock interaction. In addition, micro-computed tomography (µCT) was used to construct 3D models of the studied microstructures.<br><br>
 
-The results of this project were published in two peer-reviewed papers:
+The results of this project were published in two peer-reviewed papers:<br>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
