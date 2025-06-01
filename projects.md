@@ -24,15 +24,8 @@ Project Number: MMT24-IACT-01; CSIC-MOMENTUM SCHOLARSHIP funded EU’s Recovery 
 <br><br><br><br>
 
 ---
+<b> Previous projects </b><br>
 
-<b>Previously, I was the Principal Investigator (PI) of a research project within the Preludium Programme,</b> funded by the National Science Centre, Poland<br><br>
-The project, <i>[High-pressure brittle failure of Tsäkkok eclogites (Scandinavian Caledonides): Interplay between dehydration and subduction zone seismicity](https://projekty.ncn.gov.pl/en/index.php?projekt_id=443889),</i> focused on the Tsäkkok Tectonic Lens (TTL), located above the Arctic Circle in Norrbotten, Sweden. The TTL is part of the Scandinavian Caledonides, a ~1000 km long Himalayan-type orogen.<br><br>
-
-In this study, we applied an interdisciplinary analytical approach to constrain the pressure-temperature conditions of deformation and to confirm tectonic burial to depths exceeding 60 km within a relatively cold subduction zone. Our methods estimated that the studied rocks released approximately 4–5 wt.% of water, which played a key role in facilitating deformation. We documented a new set of structures formed by extensive fluid release and characterized the chemical composition of the released fluids and their effects on surrounding mineral grains.<br><br>
-
-A multi-method approach was employed to trace subtle, often overprinted evidence of fluid-rock interaction. In addition, micro-computed tomography (µCT) was used to construct 3D models of the studied microstructures.<br><br>
-
-The results of this project were published in two peer-reviewed papers:<br>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
@@ -46,21 +39,19 @@ The results of this project were published in two peer-reviewed papers:<br>
     }
   </style>
 </head>
-
 <body>
-<b><b>Bukała M,</b></b> Hidas K, Klonowska I, Barnes CJ, Fassmer K, Majka J. (2024) <br>
-<div class="indent">
-  Dehydration-driven deformation of eclogite: interplay between fluid discharge and rheology.
-  J. Metamorph. Geol.; 1-24.
-  doi: <a href="https://doi.org/10.1111/jmg.12765" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/jmg.12765 </a> 
-</div>   
-<br>
 
-<b>Bukała M,</b> Barnes CJ, Jeanneret P, Hidas K, Mazur S, Almqvist BS, et al. (2020) <br>
+<b><a href="https://www.aei.gob.es/convocatorias/buscador-convocatorias/ayudas-contratos-juan-cierva-formacion-2021/publicaciones" style="color: rgb(255, 255, 255); text-decoration: none;"> Juan de la Cierva Formación grant</a> </b>
 <div class="indent">
-  Brittle deformation during eclogitization of early Paleozoic blueschist. <br>
-  Front. Earth Sci.; 8:594452. 
-  doi: <a href="https://doi.org/10.3389/feart.2020.594453" style="color: rgb(38,139,210); text-decoration: none;"> 10.3389/feart.2020.594453 </a>  
-</div> 
-<br>
-</body>
+  As a postdoctoral researcher I investigated the thermodynamics and petrology of serpentinite dehydration in paleo-subduction complexes of the Betic Cordillera. <br>
+  <i>read more</i>
+</div>
+<br><br>
+
+<b><a href="https://projekty.ncn.gov.pl/en/index.php?projekt_id=443889" style="color: rgb(255, 255, 255); text-decoration: none;"> National Science Centre (Poland) - Preludium grant</a> </b>
+<div class="indent">
+  I was the Principal Investigator (PI) of a research project <b><i> High-pressure brittle failure of Tsäkkok eclogites (Scandinavian Caledonides): Interplay between dehydration and subduction zone seismicity </i></b> focused on the Tsäkkok Tectonic Lens (TTL), located above the Arctic Circle in Norrbotten, Sweden. The TTL is part of the Scandinavian Caledonides, a ~1000 km long Himalayan-type orogen.<br>
+  <i>read more</i>
+</div>
+<br><br>
+
