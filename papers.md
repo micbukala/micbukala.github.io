@@ -52,6 +52,7 @@ redirect_from:
 
 <b>Peer-review papers:</b><br>
 -------- 2024 --------<br>
+
 <b>[19]</b> Barnes CJ, Zack T, <b>Bukała M</b>, Rosel D, Mark C, Schneider D. (2024)<br>
 <div class="indent">
   Dating metamorphic processes and identifying <sup>87</sup>Sr/<sup>86</sup>Sr inheritance using volume-coupled Rb/Sr geochronology and geochemistry of in situ white mica: A demonstration with HP/LT rocks from Syros, Greece.  
@@ -70,7 +71,7 @@ redirect_from:
 
 <b> [17] </b> Ducharme TA, Schneider DA, Grasemann B, <b>Bukała M,</b> Camacho A, et al. (2024) <br>
 <div class="indent">
-  Syn-exhumation metasomatic glaucophane-phengite-quartz veins formed at moderate pressures: exploring the control of fO<sub>2</sub>​ and bulk composition on nominally HP metamorphic assemblages. 
+  Syn-exhumation metasomatic glaucophane-phengite-quartz veins formed at moderate pressures: exploring the control of <i>f</i>O<sub>2</sub>​ and bulk composition on nominally HP metamorphic assemblages. 
   <i>Contrib. Mineral. Petrol.</i>; 179:21. 
   doi: <a href="https://doi.org/10.1007/s00410-024-02101-8" style="color: rgb(38,139,210); text-decoration: none;"> 10.1007/s00410-024-02101-8 </a> 
 </div> 
@@ -203,7 +204,7 @@ redirect_from:
 <br>
 
 --------  2016  --------<br>
-<b> [01] </b> Wojtulek PM, Puziewicz J, Ntaflos T, Bukała M. (2016) <br>
+<b> [01] </b> Wojtulek PM, Puziewicz J, Ntaflos T, <b> Bukała M.</b> (2016) <br>
 <div class="indent">
   Podiform chromitites from the Variscan ophiolite serpentinites of Lower Silesia (SW Poland): petrologic and tectonic setting implications.
   <i>Geol. Q.</i>; 60(1):56–66.
