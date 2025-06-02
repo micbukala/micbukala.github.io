@@ -11,10 +11,10 @@ redirect_from:
 # Papers
 <b>Publication record:</b><br>
     • 19 peer-review papers / 1 paper in review <br>
-    • Citations: 232 <a href="https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao" target="_blank">Google Scholar</a> 
-               / 182 <a href="https://www.scopus.com/authid/detail.uri?authorId=57189596785" target="_blank">Scopus</a><br>
-    • h-index: 8 <a href="https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao" target="_blank">Google Scholar</a> 
-              / 7 <a href="https://www.scopus.com/authid/detail.uri?authorId=57189596785" target="_blank">Scopus</a><br>
+    • Citations: 245 <a href="https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao" target="_blank">Google Scholar</a> 
+               / 189 <a href="https://www.scopus.com/authid/detail.uri?authorId=57189596785" target="_blank">Scopus</a><br>
+    • h-index: 9 <a href="https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao" target="_blank">Google Scholar</a> 
+              / 8 <a href="https://www.scopus.com/authid/detail.uri?authorId=57189596785" target="_blank">Scopus</a><br>
 
 <div style="display: flex; gap: 10px; align-items: center;">
     <a href="https://www.researchgate.net/profile/Michal-Bukala-2" target="_blank">
@@ -60,10 +60,10 @@ redirect_from:
 </div>
 <br>
 
-<b> [18] </b> <b><b>Bukała M,</b></b> Hidas K, Klonowska I, Barnes CJ, Fassmer K, Majka J. (2024) <br>
+<b> [18] </b> <b>Bukała M,</b> Hidas K, Klonowska I, Barnes CJ, Fassmer K, Majka J. (2024) <br>
 <div class="indent">
   Dehydration-driven deformation of eclogite: interplay between fluid discharge and rheology.
-  J. Metamorph. Geol.; 1-24.
+  <i>J. Metamorph. Geol.</i>; 1-24.
   doi: <a href="https://doi.org/10.1111/jmg.12765" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/jmg.12765 </a> 
 </div>   
 <br>
@@ -71,7 +71,7 @@ redirect_from:
 <b> [17] </b> Ducharme TA, Schneider DA, Grasemann B, <b>Bukała M,</b> Camacho A, et al. (2024) <br>
 <div class="indent">
   Syn-exhumation metasomatic glaucophane-phengite-quartz veins formed at moderate pressures: exploring the control of fO<sub>2</sub>​ and bulk composition on nominally HP metamorphic assemblages. 
-  Contrib. Mineral. Petrol.; 179:21. 
+  <i>Contrib. Mineral. Petrol.</i>; 179:21. 
   doi: <a href="https://doi.org/10.1007/s00410-024-02101-8" style="color: rgb(38,139,210); text-decoration: none;"> 10.1007/s00410-024-02101-8 </a> 
 </div> 
 <br>
@@ -80,7 +80,7 @@ redirect_from:
 <b> [16] </b> Barnes CJ, Gilio M, <b>Bukała M,</b> Włodek A, Majka J, Smit M, Alvaro M. (2023) <br> 
 <div class="indent">
   Garnet quartz inclusion thermobarometry and Lu–Hf chronology detail the pre-ultra-high pressure metamorphic history of the Grapesvare nappe, Scandinavian Caledonides.
-  J. Petrol.; 64(12): egad086. 
+  <i>J. Petrol.</i>; 64(12): egad086. 
   doi: <a href="https://doi.org/10.1093/petrology/egad086" style="color: rgb(38,139,210); text-decoration: none;"> 10.1093/petrology/egad086 </a> 
 </div> 
 <br>
@@ -88,7 +88,7 @@ redirect_from:
 <b> [15] </b> Młynarska M, Collet S, Anczkiewicz R, Turniak K, <b>Bukała M,</b> Mazur S. (2023) <br>
 <div class="indent">
   Vestiges of late Cambrian arc-related magmatism within the Variscan belt of Europe: zircon geochronological and whole-rock geochemical data from the Leszczyniec Metaigneous Complex, Sudetes, Poland.
-  Lithos; 460-461:107394.  
+  <i>Lithos</i>; 460-461:107394.  
   doi: <a href="https://doi.org/10.1016/j.lithos.2023.107394" style="color: rgb(38,139,210); text-decoration: none;"> 10.1016/j.lithos.2023.107394 </a> 
 </div> 
 <br>
@@ -96,7 +96,7 @@ redirect_from:
 <b> [14] </b> Barnes CJ, Schneider DA, Majka J, Camacho A, Bukała M. (2023) <br>
 <div class="indent">
   <sup>40</sup>Ar/<sup>39</sup>Ar dates controlled by white mica deformation and strain localization: insights from comparing in-situ laser ablation and single-grain fusion techniques.
-  J. Metamorph. Geol.; 41(9):1143-1166.
+  <i>J. Metamorph. Geol.</i>; 41(9):1143-1166.
   doi: <a href="https://doi.org/10.1111/jmg.12739" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/jmg.12739 </a> 
 </div> 
 <br>
@@ -104,7 +104,7 @@ redirect_from:
 <b> [13] </b> Barnes CJ, Majka J, Callegari R, Walczak K, Ziemniak G, Bukała M. (2023) <br>
 <div class="indent">
   Ordovician-Silurian deformation of the Neoproterozoic upper gneiss unit in the northern Seve Nappe Complex: implications for subduction of the Baltican margin.
-  J. Geol. Soc.; 180(4): jgs2022-161. 
+  <i>J. Geol. Soc.</i>; 180(4): jgs2022-161. 
   doi: <a href="https://doi.org/10.1144/jgs2022-161" style="color: rgb(38,139,210); text-decoration: none;"> 10.1144/jgs2022-161 </a> 
 </div> 
 <br>
@@ -113,7 +113,7 @@ redirect_from:
 <b> [12] </b> Barnes CJ, <b>Bukała M,</b> Callegari R, Walczak K, Kooijman E, et al. (2022) <br>
 <div class="indent">
   Zircon and monazite reveal late Cambrian/early Ordovician partial melting of the Central Seve Nappe Complex, Scandinavian Caledonides.
-  Contrib. Mineral. Petrol.; 177:92.
+  <i>Contrib. Mineral. Petrol.</i>; 177:92.
   doi: <a href="https://doi.org/10.1007/s00410-022-01958-x" style="color: rgb(38,139,210); text-decoration: none;"> 10.1007/s00410-022-01958-x </a> 
 </div> 
 <br>
@@ -121,7 +121,7 @@ redirect_from:
 <b> [11] </b> Mazur S, Majka J, Barnes CJ, McClelland W, <b>Bukała M,</b> Janák M, et al. (2022) <br>
 <div class="indent">
   Exhumation of the high-pressure Richarddalen Complex in NW Svalbard - insights from <sup>40</sup>Ar/<sup>39</sup>Ar geochronology.
-  Terra Nova; 34:330-339. 
+  <i>Terra Nova</i>; 34:330-339. 
   doi: <a href="https://doi.org/10.1111/ter.12597" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/ter.12597 </a> 
 </div> 
 <br>
@@ -129,7 +129,7 @@ redirect_from:
 <b> [10] </b> Walczak K, Ziemniak G, Barnes CJ, Callegari R, <b>Bukała M,</b> et al. (2022) <br>
 <div class="indent">
   Late Neoproterozoic extended continental margin development recorded by the Seve Nappe Complex of the northern Scandinavian Caledonides.
-  Lithos; 417-418:106640. 
+  <i>Lithos</i>; 417-418:106640. 
   doi: <a href="https://doi.org/10.1016/j.lithos.2022.106640" style="color: rgb(38,139,210); text-decoration: none;"> 10.1016/j.lithos.2022.106640 </a>   
 </div> 
 <br>
@@ -138,7 +138,7 @@ redirect_from:
 <b> [09] </b> Fassmer K, Froitzheim N, Janák M, Strohmeyer M, <b>Bukała M,</b> et al. (2021) <br>
 <div class="indent">
   Diachronous arc-continent collision in the Seve Nappe Complex: evidence from Lu-Hf geochronology of eclogites (Norrbotten, North Sweden).
-  J. Metamorph. Geol.; 39(7):819–842. 
+  <i>J. Metamorph. Geol.</i>; 39(7):819–842. 
   doi: <a href="https://doi.org/10.1111/jmg.12591" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/jmg.12591 </a>  
 </div> 
 <br>
@@ -146,7 +146,7 @@ redirect_from:
 <b> [08] </b> Barnes CJ, Majka J, <b>Bukała M,</b> Nääs E, Rousku S. (2021) <br>
 <div class="indent">
   Detrital zircon U-Pb geochronology of a metasomatic calc-silicate in the Tsäkkok Lens, Scandinavian Caledonides.
-  Geol. Geophys. Environ.; 47(1):21–31. 
+  <i>Geol. Geophys. Environ.</i>; 47(1):21–31. 
   doi: <a href="https://doi.org/10.7494/geol.2021.47.1.21" style="color: rgb(38,139,210); text-decoration: none;"> 10.7494/geol.2021.47.1.21 </a>  
 </div> 
 <br>
@@ -155,7 +155,7 @@ redirect_from:
 <b> [07] </b> <b>Bukała M,</b> Barnes CJ, Jeanneret P, Hidas K, Mazur S, Almqvist BS, et al. (2020) <br>
 <div class="indent">
   Brittle deformation during eclogitization of early Paleozoic blueschist. <br>
-  Front. Earth Sci.; 8:594452. 
+  <i>Front. Earth Sci.</i>; 8:594452. 
   doi: <a href="https://doi.org/10.3389/feart.2020.594453" style="color: rgb(38,139,210); text-decoration: none;"> 10.3389/feart.2020.594453 </a>  
 </div> 
 <br>
@@ -163,7 +163,7 @@ redirect_from:
 <b> [06] </b> <b>Bukała M,</b> Majka J, Walczak K, Włodek A, Schmitt M, Zagórska A. (2020) <br>
 <div class="indent">
   U-Pb zircon dating of migmatitic paragneisses and garnet amphibolites from the high-pressure Seve Nappe Complex in Kittalfjäll, Swedish Caledonides.
-  Minerals; 10(4):295. 
+  <i>Minerals</i>; 10(4):295. 
   doi: <a href="https://doi.org/10.3390/min10040295" style="color: rgb(38,139,210); text-decoration: none;"> 10.3390/min10040295 </a> 
 </div> 
 <br> 
@@ -171,7 +171,7 @@ redirect_from:
 <b> [05] </b> Barnes CJ, Jeanneret P, Kullerud K, Majka J, Schneider DA, <b>Bukała M,</b> et al. (2020) <br>
 <div class="indent">
   Exhumation of the high‐pressure Tsäkkok Lens, Swedish Caledonides: insights from the structural and white mica <sup>40</sup>Ar/<sup>39</sup>Ar geochronological record.
-  Tectonics; 39(7):e2020TC006242. 
+  <i>Tectonics</i>; 39(7):e2020TC006242. 
   doi: <a href="https://doi.org/10.1029/2020TC006242" style="color: rgb(38,139,210); text-decoration: none;"> 10.1029/2020TC006242 </a>  
 </div> 
 <br>
@@ -180,7 +180,7 @@ redirect_from:
 <b> [04] </b> Holmberg J, <b>Bukała M,</b> Jeanneret P, Klonowska I, Majka J. (2019) <br>
 <div class="indent">
   Decompressional equilibration of the Midsund granulite from Otrøy, Western Gneiss Region, Norway.
-  Geol. Carpath.; 70(6):471–482. 
+  <i>Geol. Carpath.</i>; 70(6):471–482. 
   doi: <a href="https://doi.org/10.2478/geoca-2019-0027" style="color: rgb(38,139,210); text-decoration: none;"> 10.2478/geoca-2019-0027 </a>  
 </div> 
 <br>
@@ -188,7 +188,7 @@ redirect_from:
 <b> [03] </b> Barnes CJ, Majka J, Schneider D, Walczak K, <b>Bukała M,</b> et al. (2019) <br>
 <div class="indent">
   High-spatial resolution dating of monazite and zircon reveals timing of subduction-exhumation of the Vaimok Lens in the Seve Nappe Complex (Scandinavian Caledonides).
-  Contrib. Mineral. Petrol.; 174(1):5. 
+  <i>Contrib. Mineral. Petrol.</i>; 174(1):5. 
   doi: <a href="https://doi.org/10.1007/s00410-018-1539-1" style="color: rgb(38,139,210); text-decoration: none;"> 10.1007/s00410-018-1539-1 </a>  
 </div> 
 <br>
@@ -197,7 +197,7 @@ redirect_from:
 <b> [02] </b> <b>Bukała M,</b> Klonowska I, Barnes CJ, Majka J, Kośmińska K, Janák M, et al. (2018) <br>
 <div class="indent">
   UHP metamorphism recorded by phengite eclogite from the Caledonides of northern Sweden: P-T path and tectonic implications.
-  J. Metamorph. Geol.; 36(5):547–566.
+  <i>J. Metamorph. Geol.</i>; 36(5):547–566.
   doi: <a href="https://doi.org/10.1111/jmg.12306" style="color: rgb(38,139,210); text-decoration: none;"> 10.1111/jmg.12306 </a>  
 </div> 
 <br>
@@ -206,7 +206,7 @@ redirect_from:
 <b> [01] </b> Wojtulek PM, Puziewicz J, Ntaflos T, Bukała M. (2016) <br>
 <div class="indent">
   Podiform chromitites from the Variscan ophiolite serpentinites of Lower Silesia (SW Poland): petrologic and tectonic setting implications.
-  Geol. Q.; 60(1):56–66.
+  <i>Geol. Q.</i>; 60(1):56–66.
   doi: <a href="https://dx.doi.org/10.7306/gq.1238" style="color: rgb(38,139,210); text-decoration: none;"> 10.7306/gq.1238 </a>  
 </div> 
 <br>
