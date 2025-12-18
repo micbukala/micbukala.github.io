@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Mountain Plexus</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #111; }
+        #container { position: relative; width: 100%; height: 100%; }
+        
+        /* Twoje zdjęcie w tle */
+        #bg-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=3870&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6; /* Lekko przyciemniamy zdjęcie, żeby sieć była widoczna */
+        }
+
+        canvas { position: absolute; top: 0; left: 0; display: block; }
+        
+        .ui {
+            position: absolute; bottom: 20px; left: 20px; color: white; font-family: sans-serif;
+            background: rgba(0,0,0,0.5); padding: 10px; border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="bg-image"></div>
+    <canvas id="plexusCanvas"></canvas>
+    <div class="ui">
+        <h3>Edycja Punktów</h3>
+        <p>Edytuj tablicę "anchors" w kodzie źródłowym, <br>używając wartości 0.0 - 1.0</p>
+    </div>
+</div>
+
+<script>
+    /**
+     * KONFIGURACJA WARSTW
+     * anchors: Główne punkty definiujące kształt góry (x: 0-1, y: 0-1)
+     * color: Kolor sieci
+     * oscillationRange: Jak mocno główne punkty drgają (w pikselach)
+     * transientCount: Ile dodatkowych "znikających" punktów ma latać w tej warstwie
+     * connectionDist: Maksymalna odległość łączenia linii
+     */
+    const layersConfig = [
+        // --- WARSTWA 1 (Tło - Dalekie szczyty) ---
+        {
+            color: 'rgba(200, 230, 255, 0.3)',
+            connectionDist: 150,
+            oscillationRange: 5, // Mały ruch
+            transientCount: 20,  // Mniej dodatkowych punktów
+            anchors: [
+                { x: 0.0, y: 0.5 },
+                { x: 0.2, y: 0.4 }, // Szczyt
+                { x: 0.4, y: 0.55 },
+                { x: 0.6, y: 0.35 }, // Wysoki szczyt
+                { x: 0.8, y: 0.5 },
+                { x: 1.0, y: 0.45 }
+            ]
+        },
+        // --- WARSTWA 2 (Drugi plan) ---
+        {
+            color: 'rgba(255, 255, 255, 0.5)',
+            connectionDist: 180,
+            oscillationRange: 10,
+            transientCount: 30,
+            anchors: [
+                { x: 0.0, y: 0.7 },
+                { x: 0.15, y: 0.6 },
+                { x: 0.35, y: 0.75 }, // Dolina
+                { x: 0.55, y: 0.55 }, // Szczyt
+                { x: 0.75, y: 0.65 },
+                { x: 1.0, y: 0.8 }
+            ]
+        },
+        // --- WARSTWA 3 (Pierwszy plan - najbliżej) ---
+        {
+            color: 'rgba(255, 255, 255, 0.8)',
+            connectionDist: 250,
+            oscillationRange: 15, // Wyraźny ruch
+            transientCount: 40,   // Dużo latających cząsteczek
+            anchors: [
+                { x: 0.0, y: 1.0 }, // Zaczynamy nisko
+                { x: 0.1, y: 0.85 },
+                { x: 0.3, y: 0.9 },
+                { x: 0.5, y: 0.75 }, // Główny bliski szczyt
+                { x: 0.7, y: 0.95 },
+                { x: 0.9, y: 0.85 },
+                { x: 1.0, y: 1.0 }
+            ]
+        }
+    ];
+
+    // --- SILNIK ANIMACJI ---
+    
+    const canvas = document.getElementById('plexusCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    // Klasa dla punktu (Główny lub "Chwilowy")
+    class Point {
+        constructor(isAnchor, xPercent, yPercent, layerConfig) {
+            this.isAnchor = isAnchor;
+            this.config = layerConfig;
+            
+            // Pozycja bazowa (dla Anchorów)
+            this.baseXPercent = xPercent;
+            this.baseYPercent = yPercent;
+
+            // Aktualna pozycja (w pikselach)
+            this.x = xPercent * width;
+            this.y = yPercent * height;
+
+            // Losowe przesunięcie fazy oscylacji
+            this.phase = Math.random() * Math.PI * 2;
+            this.oscSpeed = 0.02 + Math.random() * 0.02;
+
+            // Dla punktów "chwilowych" (Transient)
+            if (!isAnchor) {
+                this.life = 0;
+                this.maxLife = 100 + Math.random() * 150; // Ilość klatek życia
+                this.opacity = 0;
+                // Losowy wektor ruchu dla wolnych punktów
+                this.vx = (Math.random() - 0.5) * 0.5; 
+                this.vy = (Math.random() - 0.5) * 0.5;
+            }
+        }
+
+        update(time) {
+            // Logika dla GŁÓWNYCH PUNKTÓW (zakotwiczonych)
+            if (this.isAnchor) {
+                // Przelicz pozycję bazową (na wypadek zmiany wielkości okna)
+                const targetBaseX = this.baseXPercent * width;
+                const targetBaseY = this.baseYPercent * height;
+
+                // Oscylacja (lemniskata lub koło)
+                const offsetX = Math.sin(time * this.oscSpeed + this.phase) * this.config.oscillationRange;
+                const offsetY = Math.cos(time * this.oscSpeed * 0.8 + this.phase) * (this.config.oscillationRange * 0.8);
+
+                this.x = targetBaseX + offsetX;
+                this.y = targetBaseY + offsetY;
+                this.opacity = 1.0;
+            } 
+            // Logika dla CHWILOWYCH PUNKTÓW
+            else {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life++;
+
+                // Obliczanie przezroczystości (fade in -> wait -> fade out)
+                if (this.life < 20) {
+                    this.opacity = this.life / 20; // Pojawianie się
+                } else if (this.life > this.maxLife - 20) {
+                    this.opacity = (this.maxLife - this.life) / 20; // Znikanie
+                } else {
+                    this.opacity = 1; // Pełna widoczność
+                }
+
+                // Restart punktu, gdy umrze
+                if (this.life >= this.maxLife) {
+                    this.respawn();
+                }
+            }
+        }
+
+        // Funkcja resetująca "chwilowy" punkt w nowym losowym miejscu
+        respawn() {
+            this.life = 0;
+            this.maxLife = 100 + Math.random() * 150;
+            
+            // SPAWN STRATEGY:
+            // Chcemy, żeby punkty pojawiały się w pobliżu "gór", a nie na całym niebie.
+            // Wybieramy dwa losowe sąsiednie Anchory i losujemy pozycję między nimi + mały rozrzut.
+            
+            const anchors = this.config.activeAnchors; // Musimy mieć dostęp do anchorów tej warstwy
+            if (anchors && anchors.length > 1) {
+                const idx = Math.floor(Math.random() * (anchors.length - 1));
+                const p1 = anchors[idx];
+                const p2 = anchors[idx + 1];
+
+                // Interpolacja liniowa (lerp)
+                const t = Math.random(); 
+                // Pozycjonujemy punkt gdzieś pomiędzy p1 a p2
+                const lerpX = p1.baseXPercent + (p2.baseXPercent - p1.baseXPercent) * t;
+                const lerpY = p1.baseYPercent + (p2.baseYPercent - p1.baseYPercent) * t;
+
+                // Dodajemy losowy rozrzut (jitter), żeby nie były idealnie na linii
+                const jitter = 0.15; // 15% ekranu rozrzutu
+                this.baseXPercent = lerpX + (Math.random() - 0.5) * jitter;
+                this.baseYPercent = lerpY + (Math.random() - 0.5) * jitter; // Bardziej w górę/dół
+
+                this.x = this.baseXPercent * width;
+                this.y = this.baseYPercent * height;
+            } else {
+                // Fallback jeśli brak anchorów
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+            }
+        }
+    }
+
+    // Inicjalizacja stanu
+    let layersData = [];
+
+    function init() {
+        resize();
+        layersData = layersConfig.map(config => {
+            const points = [];
+            
+            // 1. Tworzenie Anchorów
+            const anchorsRefs = [];
+            config.anchors.forEach(pos => {
+                const p = new Point(true, pos.x, pos.y, config);
+                points.push(p);
+                anchorsRefs.push(p);
+            });
+            
+            // Przekazujemy referencje do anchorów do konfiguracji, 
+            // żeby punkty transient wiedziały gdzie się rodzić
+            config.activeAnchors = anchorsRefs;
+
+            // 2. Tworzenie punktów Transient
+            for(let i=0; i<config.transientCount; i++) {
+                const p = new Point(false, 0, 0, config);
+                p.respawn(); // Ustaw początkową pozycję
+                // Losowy start życia, żeby nie wszystkie pojawiły się naraz
+                p.life = Math.random() * p.maxLife; 
+                points.push(p);
+            }
+
+            return { config, points };
+        });
+    }
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    let time = 0;
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        layersData.forEach(layer => {
+            const { config, points } = layer;
+
+            // 1. Aktualizacja pozycji
+            points.forEach(p => p.update(time));
+
+            // 2. Rysowanie połączeń i punktów
+            ctx.lineWidth = 1;
+            
+            // Iterujemy po wszystkich punktach, żeby znaleźć pary
+            for (let i = 0; i < points.length; i++) {
+                const p1 = points[i];
+                if (p1.opacity <= 0.01) continue; // Optymalizacja
+
+                // Rysuj punkt
+                ctx.fillStyle = config.color;
+                ctx.globalAlpha = p1.opacity;
+                ctx.beginPath();
+                ctx.arc(p1.x, p1.y, p1.isAnchor ? 3 : 1.5, 0, Math.PI * 2); // Anchory są większe
+                ctx.fill();
+
+                // Rysuj linie do sąsiadów
+                // Sprawdzamy tylko punkty o wyższym indeksie (żeby nie dublować linii)
+                for (let j = i + 1; j < points.length; j++) {
+                    const p2 = points[j];
+                    if (p2.opacity <= 0.01) continue;
+
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distSq = dx*dx + dy*dy; // Używamy kwadratu odległości (szybciej)
+                    const maxDistSq = config.connectionDist * config.connectionDist;
+
+                    if (distSq < maxDistSq) {
+                        const dist = Math.sqrt(distSq);
+                        // Alpha zależy od odległości ORAZ przezroczystości obu punktów
+                        const distAlpha = 1 - dist / config.connectionDist;
+                        const finalAlpha = distAlpha * Math.min(p1.opacity, p2.opacity);
+
+                        if (finalAlpha > 0) {
+                            ctx.strokeStyle = config.color;
+                            ctx.globalAlpha = finalAlpha;
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+        });
+
+        time += 1;
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    init();
+    animate();
+
+</script>
+</body>
+</html>

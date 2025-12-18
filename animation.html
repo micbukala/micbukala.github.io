@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Plexus - Speed Control</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #111; }
+        #container { position: relative; width: 100%; height: 100%; }
+        
+        #bg-image {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=3870&auto=format&fit=crop');
+            background-size: cover; background-position: center; opacity: 0.6;
+        }
+
+        canvas { position: absolute; top: 0; left: 0; display: block; }
+        
+        .ui {
+            position: absolute; bottom: 20px; left: 20px; color: white; font-family: sans-serif;
+            background: rgba(0,0,0,0.6); padding: 15px; border-radius: 8px; z-index: 10;
+            width: 300px;
+        }
+        .ui label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .ui input { width: 100%; }
+        .val-display { float: right; font-weight: normal; }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="bg-image"></div>
+    <canvas id="plexusCanvas"></canvas>
+    
+    <div class="ui">
+        <label>
+            Prędkość animacji: <span id="speedVal" class="val-display">0.5</span>
+        </label>
+        <!-- Suwak sterujący prędkością (od 0.0 do 2.0) -->
+        <input type="range" id="speedControl" min="0.0" max="3.0" step="0.1" value="0.5">
+        <p style="font-size: 0.8em; color: #ccc; margin-top: 10px;">
+            Zmienia tempo oscylacji, ruchu cząsteczek i ich znikania.
+        </p>
+    </div>
+</div>
+
+<script>
+    // --- ZMIENNA GLOBALNA PRĘDKOŚCI ---
+    let globalSpeed = 0.5; // Domyślna wartość startowa
+
+    // Obsługa suwaka
+    const speedInput = document.getElementById('speedControl');
+    const speedVal = document.getElementById('speedVal');
+    
+    speedInput.addEventListener('input', (e) => {
+        globalSpeed = parseFloat(e.target.value);
+        speedVal.innerText = globalSpeed.toFixed(1);
+    });
+
+
+    // --- KONFIGURACJA (Twoje punkty) ---
+    const layersConfig = [
+        // WARSTWA 1 (Tło)
+        {
+            color: 'rgba(200, 230, 255, 0.3)',
+            connectionDist: 150,
+            oscillationRange: 5,
+            transientCount: 20,
+            anchors: [
+                { x: 0.0, y: 0.5 }, { x: 0.2, y: 0.4 }, { x: 0.4, y: 0.55 },
+                { x: 0.6, y: 0.35 }, { x: 0.8, y: 0.5 }, { x: 1.0, y: 0.45 }
+            ]
+        },
+        // WARSTWA 2 (Środek)
+        {
+            color: 'rgba(255, 255, 255, 0.5)',
+            connectionDist: 180,
+            oscillationRange: 10,
+            transientCount: 30,
+            anchors: [
+                { x: 0.0, y: 0.7 }, { x: 0.15, y: 0.6 }, { x: 0.35, y: 0.75 },
+                { x: 0.55, y: 0.55 }, { x: 0.75, y: 0.65 }, { x: 1.0, y: 0.8 }
+            ]
+        },
+        // WARSTWA 3 (Pierwszy plan)
+        {
+            color: 'rgba(255, 255, 255, 0.8)',
+            connectionDist: 250,
+            oscillationRange: 15,
+            transientCount: 40,
+            anchors: [
+                { x: 0.0, y: 1.0 }, { x: 0.1, y: 0.85 }, { x: 0.3, y: 0.9 },
+                { x: 0.5, y: 0.75 }, { x: 0.7, y: 0.95 }, { x: 0.9, y: 0.85 }, { x: 1.0, y: 1.0 }
+            ]
+        }
+    ];
+
+    const canvas = document.getElementById('plexusCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    class Point {
+        constructor(isAnchor, xPercent, yPercent, layerConfig) {
+            this.isAnchor = isAnchor;
+            this.config = layerConfig;
+            this.baseXPercent = xPercent;
+            this.baseYPercent = yPercent;
+            this.x = xPercent * width;
+            this.y = yPercent * height;
+            
+            // Parametry ruchu
+            this.phase = Math.random() * Math.PI * 2;
+            this.oscSpeed = 0.02 + Math.random() * 0.02;
+
+            if (!isAnchor) {
+                this.life = 0;
+                this.maxLife = 100 + Math.random() * 150;
+                this.opacity = 0;
+                this.vx = (Math.random() - 0.5) * 0.5; // Prędkość pozioma
+                this.vy = (Math.random() - 0.5) * 0.5; // Prędkość pionowa
+            }
+        }
+
+        update(time) {
+            if (this.isAnchor) {
+                const targetBaseX = this.baseXPercent * width;
+                const targetBaseY = this.baseYPercent * height;
+                
+                // Oscylacja zależy od czasu, który jest sterowany globalSpeed
+                const offsetX = Math.sin(time * this.oscSpeed + this.phase) * this.config.oscillationRange;
+                const offsetY = Math.cos(time * this.oscSpeed * 0.8 + this.phase) * (this.config.oscillationRange * 0.8);
+
+                this.x = targetBaseX + offsetX;
+                this.y = targetBaseY + offsetY;
+                this.opacity = 1.0;
+            } else {
+                // Ruch transient: Mnożymy wektor prędkości przez globalSpeed
+                this.x += this.vx * globalSpeed;
+                this.y += this.vy * globalSpeed;
+                
+                // Życie też płynie szybciej lub wolniej
+                this.life += 1.0 * globalSpeed;
+
+                if (this.life < 20) {
+                    this.opacity = this.life / 20;
+                } else if (this.life > this.maxLife - 20) {
+                    this.opacity = (this.maxLife - this.life) / 20;
+                } else {
+                    this.opacity = 1;
+                }
+
+                if (this.life >= this.maxLife) {
+                    this.respawn();
+                }
+            }
+        }
+
+        respawn() {
+            this.life = 0;
+            this.maxLife = 100 + Math.random() * 150;
+            const anchors = this.config.activeAnchors;
+            if (anchors && anchors.length > 1) {
+                const idx = Math.floor(Math.random() * (anchors.length - 1));
+                const p1 = anchors[idx];
+                const p2 = anchors[idx + 1];
+                const t = Math.random(); 
+                const lerpX = p1.baseXPercent + (p2.baseXPercent - p1.baseXPercent) * t;
+                const lerpY = p1.baseYPercent + (p2.baseYPercent - p1.baseYPercent) * t;
+                const jitter = 0.15;
+                this.baseXPercent = lerpX + (Math.random() - 0.5) * jitter;
+                this.baseYPercent = lerpY + (Math.random() - 0.5) * jitter;
+                this.x = this.baseXPercent * width;
+                this.y = this.baseYPercent * height;
+            }
+        }
+    }
+
+    let layersData = [];
+
+    function init() {
+        resize();
+        layersData = layersConfig.map(config => {
+            const points = [];
+            const anchorsRefs = [];
+            config.anchors.forEach(pos => {
+                const p = new Point(true, pos.x, pos.y, config);
+                points.push(p);
+                anchorsRefs.push(p);
+            });
+            config.activeAnchors = anchorsRefs;
+            for(let i=0; i<config.transientCount; i++) {
+                const p = new Point(false, 0, 0, config);
+                p.respawn();
+                p.life = Math.random() * p.maxLife; 
+                points.push(p);
+            }
+            return { config, points };
+        });
+    }
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    let time = 0;
+    
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Modyfikujemy czas globalny o prędkość
+        time += 1.0 * globalSpeed;
+
+        layersData.forEach(layer => {
+            const { config, points } = layer;
+            // Przekazujemy time do update (dla oscylacji)
+            points.forEach(p => p.update(time));
+
+            ctx.lineWidth = 1;
+            for (let i = 0; i < points.length; i++) {
+                const p1 = points[i];
+                if (p1.opacity <= 0.01) continue;
+
+                ctx.fillStyle = config.color;
+                ctx.globalAlpha = p1.opacity;
+                ctx.beginPath();
+                ctx.arc(p1.x, p1.y, p1.isAnchor ? 3 : 1.5, 0, Math.PI * 2);
+                ctx.fill();
+
+                for (let j = i + 1; j < points.length; j++) {
+                    const p2 = points[j];
+                    if (p2.opacity <= 0.01) continue;
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distSq = dx*dx + dy*dy;
+                    if (distSq < config.connectionDist * config.connectionDist) {
+                        const distAlpha = 1 - Math.sqrt(distSq) / config.connectionDist;
+                        const finalAlpha = distAlpha * Math.min(p1.opacity, p2.opacity);
+                        if (finalAlpha > 0) {
+                            ctx.strokeStyle = config.color;
+                            ctx.globalAlpha = finalAlpha;
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    init();
+    animate();
+
+</script>
+</body>
+</html>
