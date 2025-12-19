@@ -13,7 +13,7 @@ export default function AboutPage() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-sm border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold text-teal-400 hover:text-teal-300 transition-colors">
+          <a href="/" className="text-nxl font-bold text-teal-400 hover:text-teal-300 transition-colors">
             MB
           </a>
           <div className="flex gap-6">
