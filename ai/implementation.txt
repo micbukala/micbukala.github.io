@@ -20,14 +20,6 @@ Deliverables:
 
 Milestone 1.2: Layout & Navigation
 
-Pliki do stworzenia:
-src/components/layout/
-├── Header.tsx
-├── Footer.tsx
-└── Navigation.tsx
-
-src/app/layout.tsx
-
 Deliverables:
 
 ✅ Responsive header z nawigacją
@@ -41,7 +33,6 @@ Kolejność implementacji:
 About page (src/app/about/page.tsx)
 
 Przeniesienie treści z about.md
-Rozwijane sekcje edukacji
 Photo + bio
 Publications page (src/app/publications/page.tsx)
 

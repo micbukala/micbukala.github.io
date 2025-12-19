@@ -47,7 +47,7 @@ export default function Sidebar({ className }: SidebarProps) {
             {/* Avatar - smaller on mobile */}
             <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-700 flex-shrink-0">
               <Image
-                src="/images/profile/MB_new.png"
+                src="/images/profile/MB1.jpeg"
                 alt="Michał Bukała"
                 width={40}
                 height={40}
@@ -105,7 +105,7 @@ export default function Sidebar({ className }: SidebarProps) {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
             style={{
-              backgroundImage: `url('/images/background/mountains.jpg')`, // Will be replaced by animation later
+              backgroundImage: `url('/images/background/tatry4.jpg')`, // Using same background as main page
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/80 to-slate-900/95" />
@@ -119,7 +119,7 @@ export default function Sidebar({ className }: SidebarProps) {
               {/* Avatar */}
               <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-slate-700/50 group-hover:ring-teal-400/50 transition-all duration-300">
                 <Image
-                  src="/images/profile/MB_new.png"
+                  src="/images/profile/MB1.jpeg"
                   alt="Michał Bukała"
                   width={128}
                   height={128}
@@ -199,7 +199,7 @@ export default function Sidebar({ className }: SidebarProps) {
                 <div 
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
                   style={{
-                    backgroundImage: `url('/images/background/mountains.jpg')`,
+                    backgroundImage: `url('/images/background/tatry4.jpg')`,
                   }}
                 />
                 <div className="absolute inset-0 bg-slate-800/90" />
@@ -211,7 +211,7 @@ export default function Sidebar({ className }: SidebarProps) {
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-700">
                       <Image
-                        src="/images/profile/MB_new.png"
+                        src="/images/profile/MB1.jpeg"
                         alt="Michał Bukała"
                         width={48}
                         height={48}
