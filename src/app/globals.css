@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Hydejack-inspired color scheme - always dark theme */
+  --background: #0f1419;  /* Dark slate background */
+  --foreground: #ededed;  /* Light text */
+}
+
+/* Global styles with Hydejack-inspired theme */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}

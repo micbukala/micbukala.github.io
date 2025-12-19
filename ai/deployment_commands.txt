@@ -1,0 +1,13 @@
+# Development
+npm run dev
+
+# Build (local test)
+npm run build
+npm run start
+
+# Export for GitHub Pages
+npm run build
+npm run export
+
+# Deploy (automated via GitHub Actions)
+git push origin main

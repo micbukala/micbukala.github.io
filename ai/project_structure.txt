@@ -1,0 +1,97 @@
+micbukala.github.io/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+├── public/
+│   ├── images/
+│   │   ├── profile/
+│   │   │   └── MB_new.png
+│   │   └── background/
+│   │       └── mountains.jpg
+│   ├── data/
+│   │   ├── publications.json
+│   │   ├── education.json
+│   │   └── cv-template.json
+│   ├── animation.html
+│   └── favicon.ico
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── globals.css
+│   │   ├── page.tsx                       # landing (animacja opcjonalna)
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── publications/
+│   │   │   ├── page.tsx
+│   │   │   └── [id]/page.tsx
+│   │   ├── projects/
+│   │   │   └── page.tsx
+│   │   ├── collaboration/
+│   │   │   └── page.tsx
+│   │   ├── cv/
+│   │   │   └── page.tsx
+│   │   ├── blog/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/page.tsx
+│   │   └── api/
+│   │       ├── citations/
+│   │       │   └── route.ts
+│   │       ├── publications/
+│   │       │   └── route.ts
+│   │       └── cv-data/
+│   │           └── route.ts
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── Navigation.tsx
+│   │   ├── animations/
+│   │   │   ├── PlexusAnimation.tsx
+│   │   │   ├── AnimationControls.tsx
+│   │   │   └── animation_production.tsx
+│   │   ├── globe/
+│   │   │   ├── PublicationsGlobe.tsx
+│   │   │   └── GlobeTooltip.tsx
+│   │   ├── cv/
+│   │   │   ├── CVGenerator.tsx
+│   │   │   ├── CVDocument.tsx
+│   │   │   └── CVPreview.tsx
+│   │   ├── publications/
+│   │   │   ├── PublicationCard.tsx
+│   │   │   └── PublicationList.tsx
+│   │   └── ui/
+│   │       ├── Button.tsx
+│   │       ├── Card.tsx
+│   │       └── Loading.tsx
+│   ├── lib/
+│   │   ├── api/
+│   │   │   ├── scholar.ts
+│   │   │   ├── scopus.ts
+│   │   │   └── citations.ts
+│   │   ├── cv/
+│   │   │   ├── cv-builder.ts
+│   │   │   └── pdf-generator.ts
+│   │   ├── data/
+│   │   │   ├── publications.ts
+│   │   │   └── projects.ts
+│   │   └── utils/
+│   │       ├── formatters.ts
+│   │       └── constants.ts
+│   ├── types/
+│   │   ├── publication.ts
+│   │   ├── project.ts
+│   │   ├── cv.ts
+│   │   └── citation.ts
+│   └── styles/
+│       ├── animations.css
+│       └── plexus.css
+├── animation.html                           # oryginalny demo file (może zostać w public/)
+├── about.md                                 # istniejący plik źródłowy
+├── package.json
+├── package-lock.json / pnpm-lock.yaml
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── .env.local.example
+├── README.md
+└── LICENSE
