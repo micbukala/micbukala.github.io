@@ -10,10 +10,10 @@ import { cn } from '@/lib/utils/cn'
  * Navigation menu items based on Hydejack config
  */
 const navigationItems = [
-  { title: 'Projects', href: '/projects' },
-  { title: 'Papers', href: '/publications' }, // Mapped from /papers/
-  { title: 'Collab', href: '/collaboration' }, // Mapped from /collab/
-  { title: 'About', href: '/about' },
+  { title: 'Publications', href: '/publications' },
+  { title: 'Research', href: '/research' },
+  { title: 'Software', href: '/software' },
+  { title: 'About', href: '/#about' },
 ] as const
 
 interface SidebarProps {
@@ -94,64 +94,47 @@ export default function Sidebar({ className }: SidebarProps) {
       </div>
 
       {/* Desktop Sidebar */}
-      <aside
-        className={cn(
-          'hidden lg:flex lg:flex-col lg:fixed lg:inset-y-0 lg:left-0 lg:w-80 lg:bg-slate-900/95 lg:backdrop-blur-md lg:border-r lg:border-slate-700/50 lg:z-30',
-          className
-        )}
-      >
+      <aside className="fixed left-0 top-0 w-[300px] h-full z-30 hidden lg:block overflow-hidden">
         {/* Background Image Container */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            className="absolute inset-0 bg-cover bg-right bg-no-repeat"
             style={{
-              backgroundImage: `url('/images/background/tatry4.jpg')`, // Using same background as main page
+              backgroundImage: `url('/images/background/tatry4.jpg')`,
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/80 to-slate-900/95" />
+          {/* Overlay to ensure text readability but keep image visible */}
+          <div className="absolute inset-0 bg-slate-900/20" />
         </div>
 
-        {/* Sidebar Content */}
-        <div className="relative z-10 flex flex-col h-full p-8">
-          {/* Avatar and Title */}
-          <div className="flex flex-col items-center text-center mb-8">
-            <Link href="/" className="group focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg">
-              {/* Avatar */}
-              <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-slate-700/50 group-hover:ring-teal-400/50 transition-all duration-300">
-                <Image
-                  src="/images/profile/MB1.jpeg"
-                  alt="Michał Bukała"
-                  width={128}
-                  height={128}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                />
-              </div>
-              
-              {/* Title */}
-              <h1 className="text-2xl font-bold text-slate-100 group-hover:text-teal-400 transition-colors duration-200 mb-3">
-                Michał Bukała
-              </h1>
-            </Link>
-            
-            {/* Tagline */}
-            <div className="text-slate-400 text-sm leading-relaxed">
-              <p className="block">Geologist by education</p>
-              <p className="block">Scientist by profession</p>
-              <p className="block">Developer by interest</p>
+        <div className="relative z-10 p-8 h-full flex flex-col">
+          {/* Compact Avatar */}
+          <div className="flex flex-col items-center mb-8">
+            <div className="w-20 h-20 rounded-full overflow-hidden mb-4 ring-2 ring-slate-700/50">
+              <Image
+                src="/images/profile/MB1.jpeg"
+                alt="Michał Bukała"
+                width={80}
+                height={80}
+                className="w-full h-full object-cover"
+              />
             </div>
+            <h1 className="text-lg font-bold text-center">Michał Bukała</h1>
+            <p className="text-sm text-slate-400 text-center">
+              Geologist
+              <br />Scientist
+              <br />Developer
+            </p>
           </div>
 
-          {/* Navigation Menu */}
-          <nav className="flex-1" role="navigation" aria-label="Main navigation">
+          {/* Sidebar Navigation */}
+          <nav className="flex-1">
             <ul className="space-y-2">
               {navigationItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     className="block px-4 py-3 text-slate-300 hover:text-teal-400 hover:bg-slate-800/50 transition-all duration-200 rounded-lg border-l-4 border-transparent hover:border-teal-400 font-medium text-sm uppercase tracking-wider"
-                    aria-label={`Navigate to ${item.title}`}
                   >
                     {item.title}
                   </Link>
@@ -160,11 +143,8 @@ export default function Sidebar({ className }: SidebarProps) {
             </ul>
           </nav>
 
-          {/* Copyright */}
           <div className="mt-auto pt-8 border-t border-slate-700/50">
-            <p className="text-xs text-slate-500 text-center">
-              © Michał Bukała 2025. All rights reserved.
-            </p>
+            <p className="text-xs text-slate-500 text-center">© 2025 Michał Bukała</p>
           </div>
         </div>
       </aside>

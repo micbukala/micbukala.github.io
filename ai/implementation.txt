@@ -34,13 +34,13 @@ About page (src/app/about/page.tsx)
 
 Przeniesienie treści z about.md
 Photo + bio
-Publications page (src/app/publications/page.tsx)
 
+Publications page (src/app/publications/page.tsx)
 Lista publikacji (bez globu na razie)
 Filtering/sorting
-Publication cards
-Projects page (src/app/projects/page.tsx)
 
+
+Projects page (src/app/projects/page.tsx)
 Research projects
 Funding information
 Collaboration page (src/app/collaboration/page.tsx)

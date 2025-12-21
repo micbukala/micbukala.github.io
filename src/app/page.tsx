@@ -6,9 +6,9 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const navigationItems = [
-  { title: 'Projects', href: '#projects' },
-  { title: 'Papers', href: '/publications' },
-  { title: 'Collab', href: '/collaboration' },
+  { title: 'Publications', href: '/publications' },
+  { title: 'Research', href: '/research' },
+  { title: 'Software', href: '/software' },
   { title: 'About', href: '#about' },
 ] as const
 
@@ -19,10 +19,15 @@ export default function Home() {
   
   // Transform for landing page becoming sidebar
   // Moves from 0 to (320px - 100vw), effectively leaving 320px visible on the left
-  const landingX = useTransform(scrollY, [0, 400], ["calc(0vw + 0px)", "calc(-100vw + 320px)"]) 
+  // ZMIANA: Tutaj ustawiasz szerokość sidebara (obecnie 280px)
+  const sidebarWidth = 300; 
+  // ZMIANA: Używamy % zamiast vw, aby uniknąć problemów z paskiem przewijania (gap)
+  const landingX = useTransform(scrollY, [0, 400], ["calc(0% + 0px)", `calc(-100% + ${sidebarWidth}px)`]) 
   const sidebarContentOpacity = useTransform(scrollY, [300, 400], [0, 1]) // Sidebar content fades in at the end
   const landingContentOpacity = useTransform(scrollY, [0, 200], [1, 0]) // Landing content fades out quickly
-  const backgroundOpacity = useTransform(scrollY, [0, 400], [0.7, 0.95])
+  // ZMIANA: Tutaj możesz zmienić jasność tła (opacity). Mniejsza wartość = jaśniejsze tło.
+  // [0.4, 0.95] oznacza start od 40% zaciemnienia, kończąc na 95%
+  const backgroundOpacity = useTransform(scrollY, [0, 400], [0.2, 0.95])
 
   useEffect(() => {
     const unsubscribe = scrollY.onChange((latest) => {
@@ -40,7 +45,7 @@ export default function Home() {
       {/* Fixed Background */}
       <div className="fixed inset-0 -z-20">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-right bg-no-repeat"
           style={{
             backgroundImage: `url('/images/background/tatry4.jpg')`,
           }}
@@ -91,12 +96,29 @@ export default function Home() {
       )}
 
       {/* Fixed Sidebar - content appears over the stopped landing page */}
+      {/* ZMIANA: Tutaj ustawiasz szerokość kontenera sidebara (w-[280px]) */}
       <motion.aside
-        className="fixed left-0 top-0 w-80 h-full z-30 hidden lg:block overflow-hidden pointer-events-none lg:pointer-events-auto"
+        className="fixed left-0 top-0 w-[300px] h-full z-30 hidden lg:block overflow-hidden pointer-events-none lg:pointer-events-auto"
       >
-        {/* Sidebar content - fades in */}
+        {/* Sidebar Background - fades in with content to match subpages */}
         <motion.div 
-          className="relative p-8 h-full flex flex-col border-r border-slate-700/50 bg-slate-900/80 backdrop-blur-sm"
+          className="absolute inset-0"
+          style={{ opacity: sidebarContentOpacity }}
+        >
+          <div 
+            className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+            style={{
+              backgroundImage: `url('/images/background/tatry4.jpg')`,
+            }}
+          />
+          <div className="absolute inset-0 bg-slate-900/20" />
+        </motion.div>
+
+        {/* Sidebar content - fades in */}
+        {/* ZMIANA: Usunięto tło (bg-slate-900/80) i rozmycie (backdrop-blur-sm), aby pokazać zdjęcie z landing page */}
+        {/* ZMIANA: Usunięto border-r, aby zlikwidować pionową linię */}
+        <motion.div 
+          className="relative p-8 h-full flex flex-col"
           style={{ opacity: sidebarContentOpacity }}
         >
           {/* Compact Avatar */}
@@ -111,7 +133,11 @@ export default function Home() {
               />
             </div>
             <h1 className="text-lg font-bold text-center">Michał Bukała</h1>
-            <p className="text-sm text-slate-400 text-center">Geologist • Scientist • Developer</p>
+            <p className="text-sm text-slate-400 text-center">
+              Geologist
+              <br />Scientist
+              <br />Developer
+            </p>
           </div>
 
           {/* Sidebar Navigation */}
@@ -171,9 +197,12 @@ export default function Home() {
         {/* About Content - positioned behind landing page */}
         <div className="fixed inset-0 z-5">
           <section className="min-h-screen bg-slate-900/50 backdrop-blur-sm flex items-center">
-            <div className="w-full pl-80 pr-8 py-16"> {/* Left padding for sidebar space */}
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-4xl font-bold mb-12 text-center">About</h2>
+            {/* ZMIANA: Tutaj ustawiasz padding-left równy szerokości sidebara (pl-[280px]) */}
+            {/* Dodano lg: prefix, aby padding był tylko na desktopie. Na mobile px-8. */}
+            <div className="w-full px-8 lg:pl-[280px] lg:pr-8 py-16"> {/* Left padding for sidebar space */}
+              {/* ZMIANA: Usunięto mx-auto na desktopie (lg:mx-0) i dodano lg:ml-20, aby treść była bliżej sidebara */}
+              <div className="max-w-4xl mx-auto lg:mx-0 lg:ml-20">
+                <h2 className="text-4xl font-bold mb-12 text-center lg:text-left">About</h2>
                 
                 {/* Profile Section - adjusted for narrower space */}
                 <div className="flex flex-col gap-8 mb-16">
@@ -187,7 +216,9 @@ export default function Home() {
                     />
                   </div>
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold mb-2">Michał Bukała, PhD</h3>
+                    {/* ZMIANA: mb-1 to margines dolny (odstęp od elementu poniżej). Zmniejsz go, aby zbliżyć napisy. */}
+                    {/* Kolory czcionek ustawia się klasami np. text-slate-100 (biały), text-teal-400 (turkusowy), text-slate-400 (szary) */}
+                    <h3 className="text-3xl font-bold mb-0 text-slate-100 leading-tight">Michał Bukała, PhD</h3>
                     <p className="text-slate-400 text-sm mb-4">
                       [ENG: <em>Mee-how Boo-kah-lah</em>]
                     </p>
@@ -239,7 +270,7 @@ export default function Home() {
 
         {/* Landing Page Section - slides left to reveal About */}
         <motion.section 
-          className="fixed inset-0 flex items-center justify-center px-8 bg-cover bg-center z-10"
+          className="fixed inset-0 flex items-center justify-center px-8 bg-cover bg-right z-10"
           style={{ 
             x: landingX,
             backgroundImage: `url('/images/background/tatry4.jpg')`
@@ -247,38 +278,58 @@ export default function Home() {
         >
           <div 
             className="absolute inset-0 bg-slate-900"
-            style={{ opacity: 0.7 }}
+            // ZMIANA: Tutaj ustawiasz początkowe zaciemnienie tła na landing page
+            style={{ opacity: 0.2 }}
           />
           
           <motion.div 
             className="text-center max-w-3xl relative z-10"
             style={{ opacity: landingContentOpacity }}
           >
-            {/* Large Avatar */}
+            {/* --- SEKCJA LANDING PAGE: ELEMENTY --- */}
+            
+            {/* 1. AWATAR */}
+            {/* mb-[48px] = odstęp pod awatarem */}
             <div 
-              className="w-48 h-48 mx-auto rounded-full bg-slate-700 mb-12 flex items-center justify-center overflow-hidden ring-4 ring-slate-600/50 shadow-2xl"
+              className="w-32 h-32 mx-auto rounded-full bg-slate-700 mb-[48px] flex items-center justify-center overflow-hidden ring-4 ring-slate-600/50 shadow-2xl"
             >
               <Image 
                 src="/images/profile/MB1.jpeg"
                 alt="Michał Bukała" 
-                width={192}
-                height={192}
+                width={160}
+                height={160}
                 className="w-full h-full object-cover"
               />
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-slate-100">
+            {/* 2. IMIĘ I NAZWISKO */}
+            {/* text-[32px] = rozmiar czcionki */}
+            {/* mb-[4px] = odstęp pod imieniem (zmniejszony, aby zbliżyć do zapisu fonetycznego) */}
+            <h1 className="text-[32px] lg:text-[42px] font-bold mb-[3px] text-slate-100 leading-tight">
               Michał Bukała
             </h1>
-            
-            <div className="text-xl lg:text-2xl space-y-3 mb-16 text-slate-300">
-              <p>Geologist by education</p>
-              <p>Scientist by profession</p>
-              <p>Developer by interest</p>
+
+            {/* 3. ZAPIS FONETYCZNY */}
+            {/* text-[12px] = rozmiar czcionki */}
+            {/* mb-[24px] = odstęp pod zapisem fonetycznym (przed linią) */}
+            <div className="text-[12px] lg:text-[18px] leading-[1.4] text-slate-300 mb-[24px]">
+              [ENG: <i>Mee-how Boo-kah-lah</i>]
+            </div>
+
+            {/* 4. LINIA ODDZIELAJĄCA */}
+            {/* w-[64px] = szerokość linii */}
+            {/* mb-[24px] = odstęp pod linią */}
+            <div className="w-[64px] h-[2px] bg-slate-200/50 mx-auto mb-[24px]" />
+
+            {/* 5. ROLE (Geologist | Scientist...) */}
+            {/* text-[18px] = rozmiar czcionki */}
+            {/* mb-[64px] = odstęp pod rolami (przed 'Scroll to explore') */}
+            <div className="text-[18px] lg:text-[20px] leading-[1.4] space-y-1 mb-[64px] text-slate-300">
+              <p>Geologist • Scientist • Developer </p>
             </div>
             
-            <div className="text-slate-400 text-lg">
-              <p className="mb-4">Welcome to my digital space</p>
+            {/* 6. SCROLL TO EXPLORE */}
+            <div className="text-slate-300 text-lg">
               <p className="text-sm flex items-center justify-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
