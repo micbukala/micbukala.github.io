@@ -120,8 +120,7 @@ const NetworkGraph = ({ className = "" }: NetworkGraphProps) => {
           zoomView: true,
           dragView: true,
           hover: true,
-          zoomSpeed: 0.5,
-          minZoom: 1 // Prevent zooming out further than default
+          zoomSpeed: 0.5
         }
       };
 

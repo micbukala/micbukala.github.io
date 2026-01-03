@@ -19,7 +19,7 @@ export default function Publications() {
 
             {/* Combined Network Graph and Stats Section */}
             <section className="mb-12 bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 backdrop-blur-sm flex flex-col">
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
+              <div className="flex flex-col lg:flex-row gap-12 lg:gap-4">
               
               {/* Text Content */}
               <div className="text-slate-300 lg:w-[330px] flex-shrink-0">

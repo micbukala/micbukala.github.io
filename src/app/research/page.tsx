@@ -94,19 +94,19 @@ export default function ResearchPage() {
 
                 <div className="flex-1 space-y-4">
                 
-                  <p className="text-slate-300 leading-relaxed">
+                  <div className="text-slate-300 leading-relaxed">
                     <div className="text-xl font-bold text-slate-100 mb-2">Postdoctoral Fellowship (IACT-CSIC, Spain)</div>
                     <i>Jan 2025 - Dec 2028 </i><br /><br />
                     I am developing numerical and thermodynamic modeling tools to better understand volatile exchanges and redox reactions in Earth
                     &apos;s deep interior under high-pressure and low-to-high-temperature conditions.
                     This project focuses on integrating Gibbs free energy minimization algorithms (GFEM) with reactive transport models, 
                     leveraging AI techniques. <br />
-                  </p>
-                  <p className="text-slate-300 leading-relaxed">
+                  </div>
+                  <div className="text-slate-300 leading-relaxed">
                     <div className="mt-4 pt-4 border-t border-slate-700/50 text-s text-slate-500">
                     This project is funded by the Momentum Programme (CSIC, Spain). Project Number: MMT24-IACT-01
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
               </div>
