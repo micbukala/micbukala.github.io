@@ -131,7 +131,6 @@ const NetworkGraph = ({ className = "" }: NetworkGraphProps) => {
 
       // Add drag constraint
       networkRef.current.on("dragEnd", function () {
-        // @ts-expect-error - vis-network types
         const viewPosition = networkRef.current!.getViewPosition();
         const limit = 1000; // Limit panning range
         
@@ -182,10 +181,10 @@ const NetworkGraph = ({ className = "" }: NetworkGraphProps) => {
           }
         });
 
-        // @ts-expect-error - vis-data types
-        nodes.update(nodesToUpdate);
-        // @ts-expect-error - vis-data types
-        edges.update(edgesToUpdate);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        nodes.update(nodesToUpdate as any);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        edges.update(edgesToUpdate as any);
       });
 
       networkRef.current.on("blurNode", function () {
@@ -206,10 +205,10 @@ const NetworkGraph = ({ className = "" }: NetworkGraphProps) => {
           width: undefined // Reset width to default (based on value)
         }));
 
-        // @ts-expect-error - vis-data types
-        nodes.update(nodesToUpdate);
-        // @ts-expect-error - vis-data types
-        edges.update(edgesToUpdate);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        nodes.update(nodesToUpdate as any);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        edges.update(edgesToUpdate as any);
       });
     }
 
