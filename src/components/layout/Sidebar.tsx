@@ -62,7 +62,7 @@ export default function Sidebar({ className }: SidebarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-slate-900"
+            className="flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none focus:ring-2 focus:ring-[#89C3F9] focus:ring-offset-2 focus:ring-offset-slate-900"
             aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
             aria-expanded={isMobileMenuOpen}
           >
@@ -134,7 +134,7 @@ export default function Sidebar({ className }: SidebarProps) {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-slate-300 hover:text-teal-400 hover:bg-slate-800/50 transition-all duration-200 rounded-lg border-l-4 border-transparent hover:border-teal-400 font-medium text-sm uppercase tracking-wider"
+                    className="block px-4 py-3 text-slate-300 hover:text-[#89C3F9] hover:bg-slate-800/50 transition-all duration-200 rounded-lg border-l-4 border-transparent hover:border-[#89C3F9] font-medium text-sm uppercase tracking-wider"
                   >
                     {item.title}
                   </Link>
@@ -205,7 +205,7 @@ export default function Sidebar({ className }: SidebarProps) {
                   </div>
                   <button
                     onClick={closeMobileMenu}
-                    className="p-2 text-slate-400 hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    className="p-2 text-slate-400 hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#89C3F9]"
                     aria-label="Close mobile menu"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,7 +226,7 @@ export default function Sidebar({ className }: SidebarProps) {
                       <Link
                         href={item.href}
                         onClick={closeMobileMenu}
-                        className="block px-4 py-4 text-slate-300 hover:text-teal-400 hover:bg-slate-700/50 transition-all duration-200 border-l-4 border-transparent hover:border-teal-400 font-medium uppercase tracking-wider text-sm rounded-r-lg"
+                        className="block px-4 py-4 text-slate-300 hover:text-[#89C3F9] hover:bg-slate-700/50 transition-all duration-200 border-l-4 border-transparent hover:border-[#89C3F9] font-medium uppercase tracking-wider text-sm rounded-r-lg"
                         aria-label={`Navigate to ${item.title}`}
                       >
                         {item.title}

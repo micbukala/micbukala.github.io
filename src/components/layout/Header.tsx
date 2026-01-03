@@ -25,22 +25,13 @@ export default function Header({ className }: HeaderProps) {
           <div className="flex items-center space-x-4">
             <Link
               href="/"
-              className="flex flex-col group focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-sm"
+              className="flex flex-col group focus:outline-none focus:ring-2 focus:ring-[#89C3F9] focus:ring-offset-2 focus:ring-offset-slate-900 rounded-sm"
               aria-label="Go to homepage"
             >
               {/* Site Title */}
-              <h1 className="text-xl lg:text-2xl font-bold text-slate-100 group-hover:text-teal-400 transition-colors duration-200">
+              <h1 className="text-xl lg:text-2xl font-bold text-slate-100 group-hover:text-[#89C3F9] transition-colors duration-200">
                 Michał Bukała
               </h1>
-              
-              {/* Tagline - Hidden on mobile, visible on larger screens */}
-              <div className="hidden sm:block">
-                <p className="text-xs lg:text-sm text-slate-400 group-hover:text-teal-300 transition-colors duration-200 leading-tight">
-                  <span className="block">Geologist by education</span>
-                  <span className="block">Scientist by profession</span>
-                  <span className="block">Developer by interest</span>
-                </p>
-              </div>
             </Link>
           </div>
 

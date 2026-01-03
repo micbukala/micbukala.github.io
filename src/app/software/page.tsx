@@ -4,7 +4,7 @@ export default function SoftwarePage() {
   return (
     <>
       {/* Fixed Background */}
-      <div className="fixed inset-0 -z-20 bg-slate-900" />
+      <div className="fixed inset-0 -z-20 bg-[#485365]" />
 
       <Sidebar />
 

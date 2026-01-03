@@ -9,9 +9,8 @@ import { cn } from '@/lib/utils/cn'
  * Navigation menu items based on Hydejack config
  */
 const navigationItems = [
-  { title: 'Projects', href: '/projects' },
-  { title: 'Papers', href: '/publications' }, // Changed from /papers/ to match Next.js structure
-  { title: 'Collab', href: '/collaboration' }, // Changed from /collab/ to match Next.js structure  
+  { title: 'Publications', href: '/publications' },
+  { title: 'Research', href: '/research' },
   { title: 'About', href: '/about' },
 ] as const
 
@@ -47,7 +46,7 @@ export default function Navigation({ className, showMobileMenu = true }: Navigat
           <Link
             key={item.href}
             href={item.href}
-            className="text-slate-300 hover:text-teal-400 transition-colors duration-200 font-medium text-sm uppercase tracking-wider"
+            className="text-slate-300 hover:text-[#89C3F9] transition-colors duration-200 font-medium text-sm uppercase tracking-wider"
             aria-label={`Navigate to ${item.title}`}
           >
             {item.title}
@@ -59,7 +58,7 @@ export default function Navigation({ className, showMobileMenu = true }: Navigat
       {showMobileMenu && (
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-slate-900"
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none focus:ring-2 focus:ring-[#89C3F9] focus:ring-offset-2 focus:ring-offset-slate-900"
           aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
           aria-expanded={isMobileMenuOpen}
         >
@@ -121,7 +120,7 @@ export default function Navigation({ className, showMobileMenu = true }: Navigat
                   <h2 className="text-slate-200 font-semibold">Menu</h2>
                   <button
                     onClick={closeMobileMenu}
-                    className="p-2 text-slate-400 hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    className="p-2 text-slate-400 hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#89C3F9]"
                     aria-label="Close mobile menu"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +141,7 @@ export default function Navigation({ className, showMobileMenu = true }: Navigat
                       <Link
                         href={item.href}
                         onClick={closeMobileMenu}
-                        className="block px-6 py-3 text-slate-300 hover:text-teal-400 hover:bg-slate-700/50 transition-all duration-200 border-l-4 border-transparent hover:border-teal-400 font-medium uppercase tracking-wider text-sm"
+                        className="block px-6 py-3 text-slate-300 hover:text-[#89C3F9] hover:bg-slate-700/50 transition-all duration-200 border-l-4 border-transparent hover:border-[#89C3F9] font-medium uppercase tracking-wider text-sm"
                         aria-label={`Navigate to ${item.title}`}
                       >
                         {item.title}

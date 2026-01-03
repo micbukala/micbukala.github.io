@@ -1,71 +1,100 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
-import Sidebar from '@/components/layout/Sidebar'
+import Header from '@/components/layout/Header'
 import publicationsData from '@/data/publications.json'
+import NetworkGraph from '@/components/NetworkGraph'
 
 export default function Publications() {
   return (
-    <>
-      {/* Fixed Background */}
-      <div className="fixed inset-0 -z-20 bg-slate-900" />
-
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="min-h-screen bg-[#27303F]">
+      {/* Header */}
+      <Header />
 
       {/* Main Content */}
-      <main className="min-h-screen">
-        <div className="w-full px-8 lg:pl-[300px] lg:pr-8 py-16 pt-24 lg:pt-16">
-          <div className="max-w-4xl mx-auto lg:mx-0 lg:ml-20">
+      <main className="pt-24 pb-16 px-4 sm:px-8">
+        <div className="max-w-6xl mx-auto">
           
-            <h1 className="text-4xl font-bold text-slate-100 mb-8">Papers</h1>
+            <h1 className="text-4xl font-bold text-slate-100 mb-8">Publications</h1>
 
+            {/* Combined Network Graph and Stats Section */}
+            <section className="mb-12 bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 backdrop-blur-sm flex flex-col">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
+              
+              {/* Text Content */}
+              <div className="text-slate-300 lg:w-[330px] flex-shrink-0">
+                <p className="mb-4 leading-relaxed text-lg">
+                  My publications tackle processes operating at the boundaries of two converging tectonic plates.
+                </p>
+                <p className="mb-8 leading-relaxed text-lg">
+                  The diagram on the right visualizes the semantic relationships between keywords extracted from my publications, revealing three main clusters.<br /><br />
+                </p>
 
-            {/* Stats Section */}
-            <section className="mb-12 bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold text-slate-100 mb-4">Publication record</h2>
-              <div className="space-y-2 text-slate-300">
-                <p>• {publicationsData.stats.papers_count}</p>
-                <p>
-                  • Citations: {publicationsData.stats.citations.google_scholar} <a href={publicationsData.stats.links.google_scholar} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 transition-colors">Google Scholar</a> / {publicationsData.stats.citations.scopus} <a href={publicationsData.stats.links.scopus} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 transition-colors">Scopus</a>
-                </p>
-                <p>
-                  • h-index: {publicationsData.stats.h_index.google_scholar} <a href={publicationsData.stats.links.google_scholar} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 transition-colors">Google Scholar</a> / {publicationsData.stats.h_index.scopus} <a href={publicationsData.stats.links.scopus} target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300 transition-colors">Scopus</a>
-                </p>
+                <h2 className="text-xl font-semibold text-slate-100 mb-1">Publication record</h2>
+                <div className="space-y-2 text-slate-300 mb-2">
+                  <p>• {publicationsData.papers.length} peer-review papers / 1 paper in review</p>
+                  <p>
+                    • Citations: {publicationsData.stats.citations.google_scholar} <a href={publicationsData.stats.links.google_scholar} target="_blank" rel="noopener noreferrer" className="text-[#89C3F9] hover:text-[#CDE5FC] transition-colors">Google Scholar</a> / {publicationsData.stats.citations.scopus} <a href={publicationsData.stats.links.scopus} target="_blank" rel="noopener noreferrer" className="text-[#89C3F9] hover:text-[#CDE5FC] transition-colors">Scopus</a>
+                  </p>
+                  <p>
+                    • h-index: {publicationsData.stats.h_index.google_scholar} <a href={publicationsData.stats.links.google_scholar} target="_blank" rel="noopener noreferrer" className="text-[#89C3F9] hover:text-[#CDE5FC] transition-colors">Google Scholar</a> / {publicationsData.stats.h_index.scopus} <a href={publicationsData.stats.links.scopus} target="_blank" rel="noopener noreferrer" className="text-[#89C3F9] hover:text-[#CDE5FC] transition-colors">Scopus</a>
+                  </p>
+                </div>
+
+                {/* Social Links */}
+                <div className="flex gap-4">
+                  <a href={publicationsData.stats.links.researchgate} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
+                      <Image 
+                        src="/images/RG.png" 
+                        alt="ResearchGate" 
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </a>
+                  <a href={publicationsData.stats.links.orcid} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
+                      <Image 
+                        src="/images/ORCID.png" 
+                        alt="ORCID" 
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </a>
+                  <a href={publicationsData.stats.links.google_scholar} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
+                      <Image 
+                        src="/images/GS.png" 
+                        alt="Google Scholar" 
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </a>
+                  <a href={publicationsData.stats.links.scopus} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
+                      <Image 
+                        src="/images/SC.png" 
+                        alt="Scopus" 
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              {/* Social Links */}
-              <div className="flex gap-4 mt-6">
-                <a href={publicationsData.stats.links.researchgate} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                    <span className="text-slate-900 font-bold text-xs">RG</span>
-                  </div>
-                </a>
-                <a href={publicationsData.stats.links.orcid} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                    <span className="text-slate-900 font-bold text-xs">ORCID</span>
-                  </div>
-                </a>
-                <a href={publicationsData.stats.links.google_scholar} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                    <span className="text-slate-900 font-bold text-xs">GS</span>
-                  </div>
-                </a>
-                <a href={publicationsData.stats.links.scopus} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                    <span className="text-slate-900 font-bold text-xs">SC</span>
-                  </div>
-                </a>
+              {/* Diagram container */}
+              <div className="w-full h-[520px] flex-grow">
+                 <NetworkGraph className="w-full h-full" />
               </div>
-            </section>
+              </div>
 
-            {/* Reviewer Duties */}
-            <section className="mb-12">
-              <h2 className="text-xl font-semibold text-slate-100 mb-4">Reviewer</h2>
-              <p className="text-slate-300 leading-relaxed">
-                {publicationsData.reviewer_duties.join(', ')}
-              </p>
+              <div className="text-right text-s text-slate-500 mt-2">
+                Keyword network visualization based on the VOSviewer data. Scroll to zoom.
+              </div>
             </section>
 
             {/* Papers List */}
@@ -75,15 +104,16 @@ export default function Publications() {
                 {publicationsData.papers.map((paper) => (
                   <div key={paper.id} className="group">
                     <div className="flex items-baseline gap-2 mb-1">
-                      <span className="text-teal-400 font-mono text-sm">[{paper.id.toString().padStart(2, '0')}]</span>
+                      <span className="text-[#89C3F9] font-mono text-sm">[{paper.id.toString().padStart(2, '0')}]</span>
                       <div className="text-slate-300">
                         <span dangerouslySetInnerHTML={{ __html: paper.authors }} /> ({paper.year})
                       </div>
                     </div>
                     <div className="ml-8 sm:ml-10">
-                      <h3 className="text-lg font-medium text-slate-100 mb-1 group-hover:text-teal-400 transition-colors">
-                        {paper.title}
-                      </h3>
+                      <h3 
+                        className="text-base font-medium text-slate-100 mb-1 group-hover:text-[#89C3F9] transition-colors"
+                        dangerouslySetInnerHTML={{ __html: paper.title }}
+                      />
                       <div className="text-slate-400 text-sm mb-1">
                         <span className="italic">{paper.journal}</span>; {paper.volume}.
                       </div>
@@ -93,7 +123,7 @@ export default function Publications() {
                           href={paper.doi_url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-teal-400 hover:text-teal-300 hover:underline transition-colors"
+                          className="text-[#89C3F9] hover:text-[#CDE5FC] hover:underline transition-colors"
                         >
                           {paper.doi}
                         </a>
@@ -103,9 +133,8 @@ export default function Publications() {
                 ))}
               </div>
             </section>
-          </div>
         </div>
       </main>
-    </>
+    </div>
   )
 }
