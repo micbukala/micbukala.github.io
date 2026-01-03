@@ -64,8 +64,8 @@ export default function AboutPage() {
                       </div>
                       <div className="md:w-2/3">
                         <p className="text-lg leading-relaxed text-slate-300">
-                          9+ years of field experience across diverse terrains of <br />
-                          N Sweden, N Norway, Svalbard, NE Greenland, Slovakia, Greece, and Spain.
+                          9+ years of field experience across diverse terrains of 
+                          northern Sweden and Norway, Svalbard, northeast Greenland, Slovakia, Greece, and Spain.
                         </p>
                       </div>
                     </div>
@@ -88,9 +88,8 @@ export default function AboutPage() {
                       </div>
                       <div className="md:w-2/3">
                         <p className="text-lg leading-relaxed text-slate-300">
-                          Expertise in <br />
-                          electron backscatter diffraction (EBSD), <br />
-                          electron microprobe (EPMA), <br />
+                          Expertise in electron backscatter diffraction (EBSD), 
+                          electron microprobe (EPMA),
                           mass spectrometry (LA-ICP-MS).
                         </p>
                       </div>

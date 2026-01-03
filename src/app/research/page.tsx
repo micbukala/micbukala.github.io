@@ -146,8 +146,8 @@ export default function ResearchPage() {
                       <p> 
                         <span className="font-bold text-slate-100"> My work focuses on integrating electron backscatter 
                         diffraction (EBSD) with advanced thermodynamic modeling to investigate a novel mechanism 
-                        of carbon retention during high-pressure deserpentinization </span> and 
-                        the interaction of serpentinites with reduced COHS fluids.
+                        of carbon retention during high-pressure deserpentinization and 
+                        the interaction of serpentinites with reduced COHS fluids.</span>
                       </p>
                       <p className="italic text-slate-400">
                         I presented these results during an invited talk at <a href="https://meetingorganizer.copernicus.org/EGU24/EGU24-12237.html" target="_blank" rel="noopener noreferrer" className="text-[#89C3F9] hover:text-[#CDE5FC] hover:underline transition-colors">EGU 2024</a>

@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils/cn'
@@ -27,6 +28,11 @@ interface NavigationProps {
  */
 export default function Navigation({ className, showMobileMenu = true }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -90,10 +96,11 @@ export default function Navigation({ className, showMobileMenu = true }: Navigat
       )}
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && showMobileMenu && (
-          <motion.div
-            className="fixed inset-0 z-50 md:hidden"
+      {mounted && createPortal(
+        <AnimatePresence>
+          {isMobileMenuOpen && showMobileMenu && (
+            <motion.div
+              className="fixed inset-0 z-[100] md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -153,7 +160,9 @@ export default function Navigation({ className, showMobileMenu = true }: Navigat
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+      )}
     </nav>
   )
 }

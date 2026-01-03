@@ -26,8 +26,8 @@ export default function Publications() {
                 <p className="mb-4 leading-relaxed text-lg">
                   My publications tackle processes operating at the boundaries of two converging tectonic plates.
                 </p>
-                <p className="mb-8 leading-relaxed text-lg">
-                  The diagram on the right visualizes the semantic relationships between keywords extracted from my publications, revealing three main clusters.<br /><br />
+                <p className="mb-12 leading-relaxed text-lg">
+                  The diagram visualizes the semantic relationships between keywords extracted from my publications, revealing three main clusters.<br /><br />
                 </p>
 
                 <h2 className="text-xl font-semibold text-slate-100 mb-1">Publication record</h2>
@@ -87,7 +87,7 @@ export default function Publications() {
               </div>
 
               {/* Diagram container */}
-              <div className="w-full h-[520px] flex-grow">
+              <div className="w-full h-[300px] lg:h-[520px] flex-grow">
                  <NetworkGraph className="w-full h-full" />
               </div>
               </div>

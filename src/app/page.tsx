@@ -38,37 +38,33 @@ export default function Home() {
       </div>
       
       {/* Landing Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-32">
         {/* Content */}
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
-            {/* Avatar */}
-            <div className="w-32 h-32 mx-auto rounded-full bg-slate-700 mb-8 flex items-center justify-center overflow-hidden ring-4 ring-slate-600/50 shadow-2xl">
-              <Image 
-                src="/images/profile/MB1.jpeg"
-                alt="Michał Bukała" 
-                width={160}
-                height={160}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Name */}
-            <h1 className="text-4xl lg:text-5xl font-bold mb-2 text-slate-100 leading-tight">
-              Michał Bukała
-            </h1>
+        {/* Avatar */}
+        <div className="w-32 h-32 mx-auto rounded-full bg-slate-700 mb-8 flex items-center justify-center overflow-hidden ring-4 ring-slate-600/50 shadow-2xl">
+          <Image 
+            src="/images/profile/MB1.jpeg"
+            alt="Michał Bukała" 
+            width={80}
+            height={80}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Name */}
+        <h1 className="text-4xl lg:text-5xl font-bold mb-2 text-slate-100 leading-tight">
+          Michał Bukała
+        </h1>
 
-            {/* Phonetic */}
-            <div className="text-sm lg:text-m text-slate-300 mb-6">
-              [ENG: <i>Mee-how Boo-kah-lah</i>]
-            </div>
 
-            {/* Divider */}
-            <div className="w-16 h-0.5 bg-slate-200/50 mx-auto mb-6" />
+        {/* Divider */}
+        <div className="w-16 h-0.5 bg-slate-200/50 mx-auto mb-6" />
 
-            {/* Roles */}
-            <div className="text-xl lg:text-xl text-slate-300 mb-28">
-              <p>Geologist • Scientist • Developer</p>
-            </div>
+        {/* Roles */}
+        <div className="text-xl lg:text-xl text-slate-300 mb-40">
+          <p>Geologist • Scientist • Developer</p>
+        </div>
             
             {/* Scroll Indicator */}
             <div className="animate-bounce text-slate-300">
@@ -157,9 +153,9 @@ export default function Home() {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-lg leading-relaxed text-slate-300">
-                    Expertise in <br />
-                    electron backscatter diffraction (EBSD), <br />
-                    electron microprobe (EPMA), <br />
+                    Expertise in
+                    electron backscatter diffraction (EBSD), 
+                    electron microprobe (EPMA), 
                     mass spectrometry (LA-ICP-MS).
                   </p>
                 </div>

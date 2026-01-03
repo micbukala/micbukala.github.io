@@ -38,15 +38,6 @@ export default function Header({ className }: HeaderProps) {
           {/* Navigation */}
           <Navigation className="flex-shrink-0" />
         </div>
-
-        {/* Mobile Tagline - Shown below header on mobile */}
-        <div className="sm:hidden pb-4">
-          <p className="text-xs text-slate-400 text-center leading-relaxed">
-            <span className="block">Geologist by education</span>
-            <span className="block">Scientist by profession</span>
-            <span className="block">Developer by interest</span>
-          </p>
-        </div>
       </div>
     </header>
   )
