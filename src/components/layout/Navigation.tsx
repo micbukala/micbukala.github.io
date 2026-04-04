@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils/cn'
 const navigationItems = [
   { title: 'Publications', href: '/publications' },
   { title: 'Research', href: '/research' },
+  { title: 'Software', href: '/software' },
   { title: 'About', href: '/about' },
 ] as const
 

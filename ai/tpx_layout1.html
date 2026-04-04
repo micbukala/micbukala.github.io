@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThermoPathX — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0B1F3A;
+    --navy2:   #142C4E;
+    --teal:    #1B8C8A;
+    --teal2:   #2DB5B2;
+    --amber:   #E8973A;
+    --coral:   #D45F3C;
+    --green:   #3A9E6E;
+    --fog:     #EEF2F5;
+    --mid:     #6B8299;
+    --white:   #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+  }
+
+  .strata {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    overflow: hidden;
+  }
+  .strata svg { width: 100%; height: 100%; opacity: 0.06; }
+
+  .wrap {
+    position: relative; z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  nav {
+    position: relative; z-index: 10;
+    padding: 2rem 0 0;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .logo-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+    color: var(--white);
+  }
+  .logo-mark span {
+    color: var(--amber);
+    font-style: italic;
+  }
+  .badge-soon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--teal2);
+    border: 1px solid var(--teal);
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    padding: 5rem 0 4rem;
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--teal2);
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.1s;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.25s;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--mid);
+    max-width: 520px;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .pipeline {
+    display: flex;
+    gap: 0;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.55s;
+  }
+  .pipe-module {
+    flex: 1;
+    padding: 1.2rem 1rem 1rem;
+    border-top: 2px solid;
+    position: relative;
+    cursor: default;
+    transition: background 0.25s;
+  }
+  .pipe-module:hover { background: rgba(255,255,255,0.03); }
+  .pipe-module .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .pipe-module .mod-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.0rem;
+    display: block;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+  }
+  .pipe-module .mod-desc {
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--mid);
+    display: block;
+  }
+  .pipe-module.m1 { border-color: var(--teal); }
+  .pipe-module.m1 .mod-name { color: var(--teal2); }
+  .pipe-module.m2 { border-color: var(--teal2); }
+  .pipe-module.m2 .mod-name { color: var(--teal2); }
+  .pipe-module.m3 { border-color: var(--amber); }
+  .pipe-module.m3 .mod-name { color: var(--amber); }
+  .pipe-module.m4 { border-color: var(--coral); }
+  .pipe-module.m4 .mod-name { color: var(--coral); }
+
+  .pipe-module:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -0.55rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--mid);
+    z-index: 2;
+    opacity: 0.5;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent);
+    margin-bottom: 4rem;
+  }
+
+  .coming-soon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.7s;
+  }
+  .coming-soon-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .coming-soon-text h2 em {
+    font-style: italic;
+    color: var(--teal2);
+  }
+  .coming-soon-text p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--mid);
+    margin-bottom: 1.5rem;
+  }
+  .feature-list {
+    list-style: none;
+  }
+  .feature-list li {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--mid);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .feature-list li::before {
+    content: '—';
+    color: var(--teal);
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    margin-top: 0.12rem;
+  }
+
+  .specs-panel {
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .spec-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .spec-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+  .spec-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .spec-value.teal { color: var(--teal2); }
+  .spec-value.amber { color: var(--amber); }
+  .spec-value.coral { color: var(--coral); }
+  .spec-note {
+    font-size: 0.72rem;
+    color: var(--mid);
+    margin-top: 0.1rem;
+  }
+  .spec-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .newsletter-section {
+    margin-bottom: 6rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.85s;
+  }
+  .newsletter-inner {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .newsletter-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--teal2), var(--amber), var(--coral));
+  }
+  .newsletter-inner::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(27,140,138,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .newsletter-inner h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.5rem;
+  }
+  .newsletter-inner p {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-bottom: 1.8rem;
+    max-width: 420px;
+    line-height: 1.7;
+  }
+  .form-row {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+  }
+  .form-row input[type="email"] {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-right: none;
+    padding: 0.8rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .form-row input[type="email"]::placeholder { color: var(--mid); }
+  .form-row input[type="email"]:focus {
+    border-color: rgba(45,181,178,0.5);
+    background: rgba(255,255,255,0.06);
+  }
+  .form-row button {
+    background: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 0.8rem 1.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .form-row button:hover { background: var(--teal2); }
+  .form-row button:active { transform: scale(0.98); }
+  .form-note {
+    font-size: 0.7rem;
+    color: rgba(107,130,153,0.7);
+    margin-top: 0.8rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .form-success {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(58,158,110,0.35);
+    background: rgba(58,158,110,0.06);
+    max-width: 480px;
+  }
+  .form-success.show { display: flex; }
+  .form-success span {
+    font-size: 0.85rem;
+    color: var(--green);
+  }
+  .form-success .check {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    color: white;
+  }
+
+  footer {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-left {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.9rem;
+  }
+  .footer-left span { color: var(--amber); font-style: italic; }
+  .footer-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--mid);
+    letter-spacing: 0.06em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .pt-deco {
+    position: fixed;
+    top: 0; right: 0;
+    width: 340px; height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.07;
+  }
+
+  @media (max-width: 680px) {
+    .pipeline { flex-direction: column; }
+    .pipe-module:not(:last-child)::after { content: '↓'; right: auto; left: 50%; bottom: -0.7rem; top: auto; transform: translateX(-50%); }
+    .coming-soon { grid-template-columns: 1fr; gap: 2rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .pt-deco { display: none; }
+    .form-row { flex-direction: column; }
+    .form-row input[type="email"] { border-right: 1px solid rgba(255,255,255,0.12); border-bottom: none; }
+    .form-row button { border-top: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="strata">
+  <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,200 Q300,180 600,220 T1200,200" stroke="#2DB5B2" stroke-width="1" fill="none"/>
+    <path d="M0,280 Q400,260 700,300 T1200,270" stroke="#2DB5B2" stroke-width="0.7" fill="none"/>
+    <path d="M0,360 Q350,340 650,375 T1200,345" stroke="#1B8C8A" stroke-width="0.5" fill="none"/>
+    <path d="M0,450 Q250,430 580,460 T1200,445" stroke="#1B8C8A" stroke-width="0.5" fill="none"/>
+    <path d="M0,540 Q420,520 720,545 T1200,530" stroke="#E8973A" stroke-width="0.6" fill="none"/>
+    <path d="M0,630 Q320,610 600,635 T1200,620" stroke="#1B8C8A" stroke-width="0.4" fill="none"/>
+    <path d="M0,720 Q380,700 680,730 T1200,710" stroke="#2DB5B2" stroke-width="0.5" fill="none"/>
+  </svg>
+</div>
+
+<svg class="pt-deco" viewBox="0 0 340 900" xmlns="http://www.w3.org/2000/svg">
+  <line x1="60" y1="60" x2="60" y2="840" stroke="white" stroke-width="0.8"/>
+  <line x1="60" y1="840" x2="320" y2="840" stroke="white" stroke-width="0.8"/>
+  <path d="M60,820 Q80,720 110,600 Q140,480 170,380 Q200,280 250,200 Q280,140 310,80" stroke="#E8973A" stroke-width="1.5" fill="none"/>
+  <path d="M60,820 Q90,700 130,560 Q170,420 210,310 Q240,230 270,150 Q295,100 315,70" stroke="#2DB5B2" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+  <text x="30" y="450" font-size="10" fill="white" font-family="monospace" transform="rotate(-90,30,450)">P (GPa)</text>
+  <text x="185" y="860" font-size="10" fill="white" font-family="monospace">T (°C)</text>
+</svg>
+
+<div class="wrap">
+
+  <nav>
+    <div class="logo-mark">Thermo Path<span>X</span></div>
+    <div class="badge-soon">Coming soon</div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-label">Computational petrology · Subduction modelling</div>
+    <h1>Phase equilibria<br>at <em>planetary</em><br>scale.</h1>
+    <p class="hero-sub">An integrated four-application pipeline for automated thermodynamic modelling along subduction geotherms — from raw geochemical data to redox analysis across thousands of P-T paths.</p>
+
+    <div class="pipeline">
+      <div class="pipe-module m1">
+        <span class="num">01</span>
+        <span class="mod-name">ThermoChemX</span>
+        <span class="mod-desc">Bulk &amp; redox setup from oxide wt.% data</span>
+      </div>
+      <div class="pipe-module m2">
+        <span class="num">02</span>
+        <span class="mod-name">ThermoPath<em style="font-style:italic;color:var(--amber)">X</em></span>
+        <span class="mod-desc">Phase equilibria along P-T-X paths</span>
+      </div>
+      <div class="pipe-module m3">
+        <span class="num">03</span>
+        <span class="mod-name">ThermoRedoX</span>
+        <span class="mod-desc">Redox budget &amp; data processing</span>
+      </div>
+      <div class="pipe-module m4">
+        <span class="num">04</span>
+        <span class="mod-name">ThermoSynteX</span>
+        <span class="mod-desc">Data exploration &amp; visualisation</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="coming-soon">
+    <div class="coming-soon-text">
+      <h2>Built for<br><em>systematic</em><br>studies.</h2>
+      <p>ThermoPathX integrates with PerpleX (Connolly, 2005) and the van Keken &amp; Wilson (2023) subduction zone database to enable large-scale thermodynamic modelling that was previously impossible to run manually.</p>
+      <ul class="feature-list">
+        <li>30,000+ subduction geotherms across 56 zones</li>
+        <li>DEW19HP and DEW24HP thermodynamic databases</li>
+        <li>1D fractionation and 2D gridded minimisation</li>
+        <li>Batch processing — 394 models in under 2 hours</li>
+        <li>Full provenance tracking on every output file</li>
+        <li>Windows &amp; macOS · Open source (MIT)</li>
+      </ul>
+    </div>
+    <div class="specs-panel">
+      <div class="spec-row">
+        <span class="spec-label">Geotherms available</span>
+        <span class="spec-value teal">30,000+</span>
+        <span class="spec-note">van Keken &amp; Wilson, 2023</span>
+      </div>
+      <div class="spec-divider"></div>
+      <div class="spec-row">
+        <span class="spec-label">Subduction zones</span>
+        <span class="spec-value amber">56</span>
+        <span class="spec-note">14 layers · 40 time intervals each</span>
+      </div>
+      <div class="spec-divider"></div>
+      <div class="spec-row">
+        <span class="spec-label">Batch benchmark</span>
+        <span class="spec-value coral">1h 22m</span>
+        <span class="spec-note">197 samples · 394 models · 1182 files</span>
+      </div>
+      <div class="spec-divider"></div>
+      <div class="spec-row">
+        <span class="spec-label">PerpleX versions</span>
+        <span class="spec-value" style="font-size:1.1rem;color:var(--mid);font-family:'DM Mono',monospace;font-weight:300;">7.1.2 · 7.1.18</span>
+        <span class="spec-note">Aug 2023 — Jan 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <h3>Be the first to know.</h3>
+      <p>Leave your email and we'll notify you when ThermoPathX is available for download — no other emails, no marketing.</p>
+      <div class="form-row" id="formRow">
+        <input type="email" id="emailInput" placeholder="your@institution.edu" autocomplete="email">
+        <button onclick="handleSubmit()">Notify me</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <span>You're on the list. We'll be in touch.</span>
+      </div>
+      <div class="form-note">No spam. Unsubscribe any time.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">Thermo Path<span>X</span></div>
+    <div class="footer-right">IACT-CSIC · Granada, Spain · ERC Project</div>
+  </footer>
+
+</div>
+
+<script>
+function handleSubmit() {
+  const input = document.getElementById('emailInput');
+  const row = document.getElementById('formRow');
+  const success = document.getElementById('formSuccess');
+  const val = input.value.trim();
+  if (!val || !val.includes('@')) {
+    input.style.borderColor = 'rgba(212,95,60,0.6)';
+    input.focus();
+    setTimeout(() => { input.style.borderColor = ''; }, 1500);
+    return;
+  }
+  row.style.display = 'none';
+  success.classList.add('show');
+}
+document.getElementById('emailInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') handleSubmit();
+});
+</script>
+</body>
+</html>
