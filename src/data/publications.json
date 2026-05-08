@@ -2,12 +2,12 @@
   "stats": {
     "papers_count": "19 peer-review papers / 1 paper in review",
     "citations": {
-      "google_scholar": 280,
-      "scopus": 218
+      "google_scholar": 283,
+      "scopus": 225
     },
     "h_index": {
       "google_scholar": 10,
-      "scopus": 8
+      "scopus": 9
     },
     "links": {
       "google_scholar": "https://scholar.google.com/citations?user=c75h1EcAAAAJ&hl=pl&oi=ao",
@@ -24,6 +24,17 @@
     "Journal of the Geological Society"
   ],
   "papers": [
+        {
+      "id": 20,
+      "year": 2026,
+      "authors": "de Doliwa Zieliński L, Kośmińska K, Janák M, <b>Bukała M</b>, Kooijman E, Whitehouse M. J., Mazur S, Majka J.",
+      "title": "Nappe tectonics and inverted metamorphic zonation in the Variscan basement of the Tatra Mountains, Western Carpathians: insights from monazite and zircon geochronology",
+      "keywords": "Alpine orogeny; U-Pb geochronology; phase equilibrium modelling",
+      "journal": "Geol. Mag.",
+      "volume": "163:e21",
+      "doi": "1017/S0016756826100624 ",
+      "doi_url": "https://doi.org/10.1017/S0016756826100624"
+    },
     {
       "id": 19,
       "year": 2024,
