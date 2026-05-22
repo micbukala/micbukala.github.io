@@ -84,7 +84,7 @@ export default function ResearchPage() {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-shrink-0 mt-16"> {/* Adjust margin-top to align image vertically */}
                   <Image
-                    src="/images/momentum_logo.png"
+                    src="/images/momentum_logo2.png"
                     alt="Project Logo"
                     width={300}
                     height={150}
