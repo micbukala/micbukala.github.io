@@ -244,5 +244,20 @@
       "doi": "10.7306/gq.1238",
       "doi_url": "https://dx.doi.org/10.7306/gq.1238"
     }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "year": 2026,
+      "authors": "Plašienka D, Jurewicz P, Krzywiec P, Ludwiniak M, Malata T, <b>Bukała M,</b> Grabowski J, Krobicki M, Szczygieł J, Staryszak G",
+      "title": "Mezozoiczno-kenozoiczne pasmo orogeniczne Karpat wraz z zapadliskiem przedgórskim [The Mesozoic-Cenozoic Carpathian orogenic belt with the foredeep basin]",
+      "keywords": "Alpine orogeny; U-Pb geochronology; metamorphism",
+      "journal": "Budowa geologiczna Polski: Tom 2. Tektonika [Geology of Poland: Vol. 2. Tectonics]",
+      "pages": "(pp. 333-428)",
+      "editors": "P. Aleksandrowski & K. Zglinicki (Eds.)",
+      "publisher": "Polish Geological Institute - National Research Institute (PGI-NRI)",
+      "doi": "10.7306/isbn.978-83-68751-29-1",
+      "doi_url": "https://doi.org/10.7306/isbn.978-83-68751-29-1"
+    }
   ]
 }
