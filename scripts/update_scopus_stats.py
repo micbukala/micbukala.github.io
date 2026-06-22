@@ -37,13 +37,18 @@ def fetch_scopus_stats(api_key: str) -> tuple[int, int]:
     )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
-            data = json.loads(response.read().decode())
+            raw = response.read().decode()
+            data = json.loads(raw)
     except urllib.error.HTTPError as exc:
+        body = exc.read().decode(errors="replace")
         print(f"ERROR: Scopus API returned HTTP {exc.code}: {exc.reason}", file=sys.stderr)
+        print(f"Response body: {body}", file=sys.stderr)
         sys.exit(1)
     except urllib.error.URLError as exc:
         print(f"ERROR: Network error contacting Scopus API: {exc.reason}", file=sys.stderr)
         sys.exit(1)
+
+    print(f"Raw API response: {json.dumps(data, indent=2)}")
 
     try:
         author = data["author-retrieval-response"][0]
@@ -51,7 +56,6 @@ def fetch_scopus_stats(api_key: str) -> tuple[int, int]:
         h_index = int(author["h-index"])
     except (KeyError, IndexError, ValueError, TypeError) as exc:
         print(f"ERROR: Unexpected Scopus API response structure: {exc}", file=sys.stderr)
-        print(f"Response payload: {json.dumps(data, indent=2)}", file=sys.stderr)
         sys.exit(1)
 
     return citations, h_index
